@@ -1,56 +1,37 @@
 ---
+import InstagramIcon from '@lucide/astro/icons/instagram';
+import MicIcon from '@lucide/astro/icons/mic-vocal';
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
-<header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+<header class="fixed top-6 left-0 right-0 z-50 px-6">
+	<nav class="max-w-5xl mx-auto overflow-hidden rounded-2xl border border-white/10 relative">
+		<!-- Glass Layer -->
+		<div class="absolute inset-0 bg-gradient-to-r from-red-950/40 via-black/90 to-red-950/40 backdrop-blur-2xl -z-10"></div>
+		
+		<div class="px-6 py-4 flex items-center justify-between">
+			<div class="flex items-center gap-2">
+				<MicIcon class="w-6 h-6 text-red-500" />
+				<HeaderLink href="/" class="font-bold tracking-tighter text-xl uppercase">{SITE_TITLE}<span class="text-red-600">.</span></HeaderLink>
+			</div>
+			
+			<ul class="hidden md:flex gap-8">
+				<li><HeaderLink href="/#services" class="text-xs uppercase tracking-widest font-semibold text-gray-400 hover:text-red-500 transition-colors">Services</HeaderLink></li>
+				<li><HeaderLink href="/#projects" class="text-xs uppercase tracking-widest font-semibold text-gray-400 hover:text-red-500 transition-colors">Projects</HeaderLink></li>
+				<li><HeaderLink href="/#reach" class="text-xs uppercase tracking-widest font-semibold text-gray-400 hover:text-red-500 transition-colors">Reach</HeaderLink></li>
+				<li><HeaderLink href="/#contact" class="text-xs uppercase tracking-widest font-semibold text-gray-400 hover:text-red-500 transition-colors">Contact</HeaderLink></li>
+				<li><HeaderLink href="/blog" class="text-xs uppercase tracking-widest font-semibold text-gray-400 hover:text-red-500 transition-colors">Blog</HeaderLink></li>
+			</ul>
+
+			<div class="flex items-center gap-4">
+				<a href="https://instagram.com/tallescattarin" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+					<InstagramIcon class="w-5 h-5" />
+				</a>
+				<HeaderLink href="/#contact" class="bg-red-600 hover:bg-red-700 text-white px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all shadow-lg shadow-red-900/20">
+					Hire Me
+				</HeaderLink>
+			</div>
 		</div>
 	</nav>
 </header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
-</style>

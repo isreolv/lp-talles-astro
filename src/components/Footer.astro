@@ -2,27 +2,8 @@
 const today = new Date();
 ---
 
-<footer>
-	&copy; {today.getFullYear()} Talles Cattarin. All rights reserved. 👊🏻🤘🏻
+<footer class="py-12 px-6 border-t border-white/5 text-center">
+	<p class="text-xs text-zinc-600 uppercase tracking-widest font-bold">
+		&copy; {today.getFullYear()} Talles Cattarin. All Rights Reserved. 👊🏻🤘🏻
+	</p>
 </footer>
-<style>
-	footer {
-		padding: 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
-	}
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
-	}
-	.social-links a {
-		text-decoration: none;
-		color: rgb(var(--gray));
-	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
-</style>

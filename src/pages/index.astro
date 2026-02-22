@@ -2,7 +2,15 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { SITE_DESCRIPTION, SITE_TITLE, DONATION_PATREON, DONATION_PAYPAL } from '../consts';
+
+import ArrowRightIcon from '@lucide/astro/icons/arrow-right';
+import LayersIcon from '@lucide/astro/icons/layers';
+import WandIcon from '@lucide/astro/icons/wand-sparkles';
+import SendIcon from '@lucide/astro/icons/send';
+import InstagramIcon from '@lucide/astro/icons/instagram';
+import MailIcon from '@lucide/astro/icons/mail';
+import HeartIcon from '@lucide/astro/icons/heart';
 ---
 
 <!doctype html>
@@ -10,72 +18,188 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
+	<body class="antialiased selection:bg-red-600 selection:text-white">
+		<!-- Background Effects -->
+		<div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+			<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-red-900/10 rounded-full blur-[120px]"></div>
+			<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-red-600/5 rounded-full blur-[150px]"></div>
+		</div>
+
 		<Header />
+
 		<main>
-			<h1>Talles Cattarin</h1>
-			<p class="text-red-500">Draft website to test new workflow</p>
-			<p>
-				Musician, Singer and Audio Engineer.
-			</p>
-			<p>Crafting sonic experiences that move hearts and shake souls</p>
-			<p>
-				I'm Talles Cattarin, a music producer dedicated to creating powerful, high-quality sound through modern mixing and mastering.
-			</p>
-			<h2>Services</h2>
-			<p>
-				I’ll shape your music into an immersive, polished, and emotionally powerful experience.
-			</p>
-			<h3>Professional Mixing</h3>
-			<p>
-				I transform your raw tracks into a cohesive and impactful sound, ensuring every instrument and vocal shines in the right place.
-			</p>
-			<h3>High-Quality Mastering</h3>
-			<p>
-				Mastering gives your music its final polish, enhancing clarity, balance, and loudness so it sounds professional on any platform.
-			</p>
-			<h2>Projects</h2>
-			<p>Discover how quality mixing and mastering can make a difference.</p>
-			<iframe
-				data-testid="embed-spotify-iframe"
-				style="border-radius:12px;border:none;"
-				src="https://open.spotify.com/embed/artist/77SAbQybNSZmuluK93v8AO?utm_source=generator&theme=0"
-				width="100%"
-				height="352"
-				allowfullscreen=""
-				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-				loading="lazy"
-			>
-			</iframe>
-			<button>Ready to Transform Your Music?</button>
-			<h2>Reach</h2>
-			<p>My music has reached listeners all around the world.</p>
-			<dl>
-				<dt>Views</dt>
-				<dd>350K+</dd>
-				<dt>Likes</dt>
-				<dd>35K+</dd>
-				<dt>Interactions</dt>
-				<dd>20K+</dd>
-				<dt>Spotify Monthly Listeners</dt>
-				<dd>2.5K+</dd>
-			</dl>
-			<h2>Contact</h2>
-			<p>To request a quote or ask questions, reach out directly via Instagram, Whatsapp or e-mail. Let’s work together to make your ideas sound their best!</p>
-			<span>
-				<button>Connect on Instagram</button>
-				<button>Send a Whatsapp Message</button>
-				<button>Send an E-mail</button>
-			</span>
-			<h2>
-				Support My Work
-			</h2>
-			<p>If you enjoy my work and would like to support my musical journey, consider making a donation. Your contribution helps me continue producing quality content and investing in new creative projects.</p>
-			<span>
-				<button>Patreon</button>
-				<button>PayPal</button>
-			</span>
+			<!-- HERO SECTION -->
+			<section class="flex flex-col justify-center h-screen px-6 max-w-5xl mx-auto">
+				<div class="space-y-6">
+					<p class="text-red-500 font-mono tracking-widest text-sm uppercase animate-pulse">
+						Draft website to test new workflow
+					</p>
+					<h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-none">
+						Talles Cattarin
+					</h1>
+					<p class="text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed font-light">
+						Musician, Singer and Audio Engineer. Crafting sonic experiences that <span class="text-white font-semibold">move hearts and shake souls.</span>
+					</p>
+					<!-- <p class="text-gray-500 max-w-xl">
+						I'm Talles Cattarin, a music producer dedicated to creating powerful, high-quality sound through modern mixing and mastering.
+					</p> -->
+					<div class="flex flex-wrap gap-4 pt-4">
+						<a href="#contact" class="px-8 py-4 bg-rose-600 hover:bg-rose-700 text-white font-bold rounded-xl transition-all flex items-center gap-2 group">
+							Start Your Project
+							<ArrowRightIcon class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- SERVICES SECTION -->
+			<section id="services" class="py-24 px-6 max-w-5xl mx-auto">
+				<div class="grid md:grid-cols-3 gap-8">
+					<div class="col-span-1">
+						<h2 class="text-4xl font-black tracking-tight mb-4">Services</h2>
+						<p class="text-gray-400">I’ll shape your music into an immersive, polished, and emotionally powerful experience.</p>
+					</div>
+					<div class="col-span-1 glass-card p-8 rounded-3xl">
+						<div class="w-12 h-12 bg-red-600/20 rounded-xl flex items-center justify-center mb-6">
+							<LayersIcon class="text-red-500 w-6 h-6" />
+						</div>
+						<h3 class="text-xl font-bold mb-4">Professional Mixing</h3>
+						<p class="text-gray-400 text-sm leading-relaxed">
+							I transform your raw tracks into a cohesive and impactful sound, ensuring every instrument and vocal shines in the right place.
+						</p>
+					</div>
+					<div class="col-span-1 glass-card p-8 rounded-3xl">
+						<div class="w-12 h-12 bg-red-600/20 rounded-xl flex items-center justify-center mb-6">
+							<WandIcon class="text-red-500 w-6 h-6" />
+						</div>
+						<h3 class="text-xl font-bold mb-4">High-Quality Mastering</h3>
+						<p class="text-gray-400 text-sm leading-relaxed">
+							Mastering gives your music its final polish, enhancing clarity, balance, and loudness so it sounds professional on any platform.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- PROJECTS SECTION -->
+			<section id="projects" class="py-24 px-6 max-w-5xl mx-auto">
+				<div class="text-center space-y-4 mb-12">
+					<h2 class="text-4xl font-black tracking-tight">Recent Projects</h2>
+					<p class="text-gray-400">Discover how quality mixing and mastering can make a difference.</p>
+				</div>
+				
+				<div class="glass-card p-2 rounded-2xl overflow-hidden shadow-2xl shadow-red-900/10">
+					<iframe
+						data-testid="embed-spotify-iframe"
+						style="border-radius:12px;border:none;"
+						src="https://open.spotify.com/embed/artist/77SAbQybNSZmuluK93v8AO?utm_source=generator&theme=0"
+						width="100%"
+						height="352"
+						allowfullscreen=""
+						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+						loading="lazy"
+					>
+					</iframe>
+				</div>
+
+				<div class="mt-12 text-center">
+					<button class="px-10 py-5 bg-white text-black hover:bg-red-600 hover:text-white transition-all font-black text-lg rounded-2xl uppercase tracking-tighter">
+						Ready to Transform Your Music?
+					</button>
+				</div>
+			</section>
+
+			<!-- REACH / STATS SECTION -->
+			<section id="reach" class="py-24 px-6 bg-red-600/5 border-y border-red-900/20">
+				<div class="max-w-5xl mx-auto">
+					<div class="mb-12 text-center md:text-left">
+						<h2 class="text-4xl font-black tracking-tight mb-2">Global Reach</h2>
+						<p class="text-gray-400">My music has reached listeners all around the world.</p>
+					</div>
+					<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+						<div class="space-y-1">
+							<p class="text-gray-500 text-xs font-bold uppercase tracking-widest">Views</p>
+							<p class="text-4xl font-black text-glow-red">400K+</p>
+						</div>
+						<div class="space-y-1">
+							<p class="text-gray-500 text-xs font-bold uppercase tracking-widest">Likes</p>
+							<p class="text-4xl font-black text-glow-red">35K+</p>
+						</div>
+						<div class="space-y-1">
+							<p class="text-gray-500 text-xs font-bold uppercase tracking-widest">Interactions</p>
+							<p class="text-4xl font-black text-glow-red">20K+</p>
+						</div>
+						<div class="space-y-1">
+							<p class="text-gray-500 text-xs font-bold uppercase tracking-widest">Monthly Listeners</p>
+							<p class="text-4xl font-black text-glow-red">2.5K+</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- CONTACT SECTION -->
+			<section id="contact" class="py-24 px-6 max-w-5xl mx-auto">
+				<div class="glass-card p-20 rounded-[3rem] text-center space-y-8 relative overflow-hidden">
+					<div class="absolute top-0 right-0 p-8 opacity-5">
+						<SendIcon class="w-40 h-40 text-red-600" />
+					</div>
+					
+					<h2 class="text-4xl md:text-5xl font-black tracking-tighter">Let's Work <span class="text-rose-600">Together</span></h2>
+					<p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+						To request a quote or ask questions, reach out directly via Instagram, Whatsapp or e-mail.
+          				Let’s work together to make your ideas sound their best!
+					</p>
+					
+					<div class="flex flex-wrap justify-center gap-4">
+						<a href="#" class="px-6 py-3 bg-zinc-900 border border-white/10 rounded-xl flex items-center gap-2 hover:bg-zinc-800 transition-all font-semibold">
+							<InstagramIcon class="w-5 h-5 text-[#FF0069]" />
+							Instagram
+						</a>
+						<a href="#" class="px-6 py-3 bg-zinc-900 border border-white/10 rounded-xl flex items-center gap-2 hover:bg-zinc-800 transition-all font-semibold">
+							<svg class="w-5 h-5 text-green-500" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0 48L3.374 35.674C1.292 32.066 0.198 27.976 0.2 23.782C0.206 10.67 10.876 0 23.986 0C30.348 0.002 36.32 2.48 40.812 6.976C45.302 11.472 47.774 17.448 47.772 23.804C47.766 36.918 37.096 47.588 23.986 47.588C20.006 47.586 16.084 46.588 12.61 44.692L0 48ZM13.194 40.386C16.546 42.376 19.746 43.568 23.978 43.57C34.874 43.57 43.75 34.702 43.756 23.8C43.76 12.876 34.926 4.02 23.994 4.016C13.09 4.016 4.22 12.884 4.216 23.784C4.214 28.234 5.518 31.566 7.708 35.052L5.71 42.348L13.194 40.386ZM35.968 29.458C35.82 29.21 35.424 29.062 34.828 28.764C34.234 28.466 31.312 27.028 30.766 26.83C30.222 26.632 29.826 26.532 29.428 27.128C29.032 27.722 27.892 29.062 27.546 29.458C27.2 29.854 26.852 29.904 26.258 29.606C25.664 29.308 23.748 28.682 21.478 26.656C19.712 25.08 18.518 23.134 18.172 22.538C17.826 21.944 18.136 21.622 18.432 21.326C18.7 21.06 19.026 20.632 19.324 20.284C19.626 19.94 19.724 19.692 19.924 19.294C20.122 18.898 20.024 18.55 19.874 18.252C19.724 17.956 18.536 15.03 18.042 13.84C17.558 12.682 17.068 12.838 16.704 12.82L15.564 12.8C15.168 12.8 14.524 12.948 13.98 13.544C13.436 14.14 11.9 15.576 11.9 18.502C11.9 21.428 14.03 24.254 14.326 24.65C14.624 25.046 18.516 31.05 24.478 33.624C25.896 34.236 27.004 34.602 27.866 34.876C29.29 35.328 30.586 35.264 31.61 35.112C32.752 34.942 35.126 33.674 35.622 32.286C36.118 30.896 36.118 29.706 35.968 29.458Z" fill="currentColor" />
+							</svg>
+							WhatsApp
+						</a>
+						<a href="#" class="px-6 py-3 bg-zinc-900 border border-white/10 rounded-xl flex items-center gap-2 hover:bg-zinc-800 transition-all font-semibold">
+							<MailIcon class="w-5 h-5 text-red-500" />
+							Email
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- SUPPORT SECTION -->
+			<section class="py-24 px-6 max-w-3xl mx-auto text-center border-t border-white/5">
+				<!-- Heart Icon -->
+				<div class="flex justify-center mb-6 text-rose-500">
+					<HeartIcon class="size-16" />
+				</div>
+
+				<h2 class="text-4xl font-bold mb-4">Support My Work</h2>
+				<p class="text-gray-500 mb-8 leading-relaxed">
+					If you enjoy my work and would like to support my musical journey, consider making a donation.
+          			Your contribution helps me continue producing quality content and investing in new creative projects.
+				</p>
+				<div class="flex justify-center gap-6">
+					<a href={DONATION_PATREON} class="flex items-center gap-2 text-sm font-bold text-gray-400 hover:text-white transition-colors">
+						<svg class="size-6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<title>Patreon</title>
+							<path fill="white" d="M22.957 7.21c-.004-3.064-2.391-5.576-5.191-6.482-3.478-1.125-8.064-.962-11.384.604C2.357 3.231 1.093 7.391 1.046 11.54c-.039 3.411.302 12.396 5.369 12.46 3.765.047 4.326-4.804 6.068-7.141 1.24-1.662 2.836-2.132 4.801-2.618 3.376-.836 5.678-3.501 5.673-7.031Z"/>
+						</svg>
+						PATREON
+					</a>
+					<span class="text-zinc-800">|</span>
+					<a href={DONATION_PAYPAL} class="flex items-center gap-2 text-sm font-bold text-gray-400 hover:text-white transition-colors">
+						<svg class="size-6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<title>PayPal</title>
+							<path fill="white" d="M15.607 4.653H8.941L6.645 19.251H1.82L4.862 0h7.995c3.754 0 6.375 2.294 6.473 5.513-.648-.478-2.105-.86-3.722-.86m6.57 5.546c0 3.41-3.01 6.853-6.958 6.853h-2.493L11.595 24H6.74l1.845-11.538h3.592c4.208 0 7.346-3.634 7.153-6.949a5.24 5.24 0 0 1 2.848 4.686M9.653 5.546h6.408c.907 0 1.942.222 2.363.541-.195 2.741-2.655 5.483-6.441 5.483H8.714Z"/>
+						</svg>
+						PAYPAL
+					</a>
+				</div>
+			</section>
 		</main>
+
 		<Footer />
 	</body>
 </html>
