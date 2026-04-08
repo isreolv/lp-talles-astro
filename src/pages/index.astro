@@ -4,13 +4,17 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE, DONATION_PATREON, DONATION_PAYPAL } from '../consts';
 
-import ArrowRightIcon from '@lucide/astro/icons/arrow-right';
-import LayersIcon from '@lucide/astro/icons/layers';
-import WandIcon from '@lucide/astro/icons/wand-sparkles';
 import SendIcon from '@lucide/astro/icons/send';
+import AudioLinesIcon from '@lucide/astro/icons/audio-lines';
 import InstagramIcon from '@lucide/astro/icons/instagram';
 import MailIcon from '@lucide/astro/icons/mail';
 import HeartIcon from '@lucide/astro/icons/heart';
+import tallesHeroSvg from '../assets/talles-hero.svg';
+
+import placeholder1 from '../assets/blog-placeholder-2.jpg';
+import placeholder2 from '../assets/blog-placeholder-3.jpg';
+import placeholder3 from '../assets/blog-placeholder-4.jpg';
+import placeholder4 from '../assets/blog-placeholder-5.jpg';
 ---
 
 <!doctype html>
@@ -20,72 +24,218 @@ import HeartIcon from '@lucide/astro/icons/heart';
 	</head>
 	<body class="antialiased selection:bg-red-600 selection:text-white">
 		<!-- Background Effects -->
-		<div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+		<!-- <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
 			<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-red-900/10 rounded-full blur-[120px]"></div>
 			<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-red-600/5 rounded-full blur-[150px]"></div>
-		</div>
+		</div> -->
 
 		<Header />
 
+
+		<!-- <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-none">
+			Talles Cattarin
+		</h1> -->
+
 		<main>
 			<!-- HERO SECTION -->
-			<section class="flex flex-col justify-center h-screen px-6 max-w-5xl mx-auto">
-				<div class="space-y-6">
-					<p class="text-red-500 font-mono tracking-widest text-sm uppercase animate-pulse">
-						Draft website to test new workflow
-					</p>
-					<h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-none">
-						Talles Cattarin
-					</h1>
-					<p class="text-xl md:text-2xl text-gray-400 max-w-2xl leading-relaxed font-light">
-						Musician, Singer and Audio Engineer. Crafting sonic experiences that <span class="text-white font-semibold">move hearts and shake souls.</span>
-					</p>
-					<!-- <p class="text-gray-500 max-w-xl">
-						I'm Talles Cattarin, a music producer dedicated to creating powerful, high-quality sound through modern mixing and mastering.
-					</p> -->
-					<div class="flex flex-wrap gap-4 pt-4">
-						<a href="#contact" class="px-8 py-4 bg-rose-600 hover:bg-rose-700 text-white font-bold rounded-xl transition-all flex items-center gap-2 group">
-							Start Your Project
-							<ArrowRightIcon class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-						</a>
+			<section id="home" class="flex flex-col justify-center items-center h-screen px-6 max-w-7xl mx-auto gap-6">
+				<p class="absolute top-32 text-red-500 font-mono tracking-widest text-sm uppercase animate-pulse">
+					WIP
+				</p>
+
+				<div class="inline-flex space-x-4 items-center justify-center text-white/80 border border-[#1C1C1C] px-3 py-2 rounded-[40px] bg-zinc-950">
+					<div class="p-2 rounded-full border border-[#1C1C1C]">
+						<AudioLinesIcon class="w-6 h-6" />
+					</div>
+					<p>Music Producer, Singer and Audio Engineer</p>
+				</div>
+
+				<img src={tallesHeroSvg.src} alt="Talles Cattarin" class="w-full max-w-2xl mt-4 transition-transform duration-300 hover:rotate-1" />
+				
+				<p class="text-sm md:text-base text-gray-400 font-semibold max-w-2xl leading-relaxed tracking-wide uppercase">
+					Crafting sonic  · Building cultural
+				</p>
+				<!-- <p class="text-gray-500 max-w-xl">
+					I'm Talles Cattarin, a music producer dedicated to creating powerful, high-quality sound through modern mixing and mastering.
+				</p> -->
+				<!-- <div class="flex flex-wrap gap-4 pt-4">
+					<a href="#contact" class="px-8 py-4 bg-rose-600 hover:bg-rose-700 text-white font-bold rounded-xl transition-all flex items-center gap-2 group">
+						Start Your Project
+						<ArrowRightIcon class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+					</a>
+				</div> -->
+			</section>
+
+			<!-- ABOUT SECTION -->
+			<section id="about" class="py-24 px-6 h-screen bg-zinc-950">
+				<div class="grid md:grid-cols-3 max-w-7xl mx-auto gap-8">
+					<img src={placeholder1.src} alt="Placeholder" class="col-span-1 h-134 rounded-lg" />
+					<div class="col-span-2 flex flex-col gap-12">
+						<h2 class="text-5xl font-light tracking-wide uppercase">
+							Hi, I'm Talles!
+						</h2>
+
+						<p class="text-4xl font-light tracking-wide uppercase">
+							Musician, singer and audio engineer from Curitiba, Brazil.
+						</p>
+						
+						<p class="text-2xl font-light uppercase text-white/60">
+							I create reinterpretations of songs that marked generations and my life as well.
+						</p>
 					</div>
 				</div>
 			</section>
 
 			<!-- SERVICES SECTION -->
-			<section id="services" class="py-24 px-6 max-w-5xl mx-auto">
-				<div class="grid md:grid-cols-3 gap-8">
-					<div class="col-span-1">
-						<h2 class="text-4xl font-black tracking-tight mb-4">Services</h2>
-						<p class="text-gray-400">I’ll shape your music into an immersive, polished, and emotionally powerful experience.</p>
+			<section id="services" class="py-24 px-6 bg-zinc-950">
+				<div class="flex flex-col max-w-7xl mx-auto gap-8">
+					<div class="text-center space-y-4 mb-4">
+						<h2 class="text-2xl font-black tracking-tight">
+							SERVICES
+							<AudioLinesIcon class="w-4 h-4 inline-block text-red-600 ml-2" />
+						</h2>
 					</div>
-					<div class="col-span-1 glass-card p-8 rounded-3xl">
-						<div class="w-12 h-12 bg-red-600/20 rounded-xl flex items-center justify-center mb-6">
-							<LayersIcon class="text-red-500 w-6 h-6" />
+
+					<div class="sticky top-20 z-10 h-120 w-full grid md:grid-cols-2 rounded-2xl p-6 bg-black">
+						<div class="col-span-1 flex flex-col gap-8 rounded-3xl px-8 py-6">
+							<h3 class="text-2xl font-semibold uppercase">Music <br />Production</h3>
+							
+							<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<line x1="7" y1="1" x2="1" y2="1" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
+								<line x1="15" y1="7" x2="1" y2="7" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
+							</svg>
+							
+							<p class="text-gray-400 text-xl leading-relaxed font-light">
+								I create and shape your music from concept to final product, ensuring every element is polished and impactful.
+							</p>
 						</div>
-						<h3 class="text-xl font-bold mb-4">Professional Mixing</h3>
-						<p class="text-gray-400 text-sm leading-relaxed">
-							I transform your raw tracks into a cohesive and impactful sound, ensuring every instrument and vocal shines in the right place.
-						</p>
+						<img class="col-span-1 h-108 rounded-lg bg-zinc-900" src={placeholder1.src} alt="Placeholder" />
 					</div>
-					<div class="col-span-1 glass-card p-8 rounded-3xl">
-						<div class="w-12 h-12 bg-red-600/20 rounded-xl flex items-center justify-center mb-6">
-							<WandIcon class="text-red-500 w-6 h-6" />
+
+					<div class="sticky top-24 z-20 h-120 w-full grid md:grid-cols-2 rounded-2xl p-6 bg-black">
+						<div class="col-span-1 flex flex-col gap-8 rounded-3xl px-8 py-6">
+							<h3 class="text-2xl font-semibold uppercase">Professional <br />Mixing</h3>
+							
+							<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<line x1="7" y1="1" x2="1" y2="1" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
+								<line x1="15" y1="7" x2="1" y2="7" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
+							</svg>
+							
+							<p class="text-gray-400 text-xl leading-relaxed font-light">
+								I transform your raw tracks into a cohesive and impactful sound, ensuring every instrument and vocal shines in the right place.
+							</p>
 						</div>
-						<h3 class="text-xl font-bold mb-4">High-Quality Mastering</h3>
-						<p class="text-gray-400 text-sm leading-relaxed">
-							Mastering gives your music its final polish, enhancing clarity, balance, and loudness so it sounds professional on any platform.
-						</p>
+						<img class="col-span-1 h-108 rounded-lg bg-zinc-900" src={placeholder2.src} alt="Placeholder" />
+					</div>
+
+					<div class="sticky top-28 z-30 h-120 w-full grid md:grid-cols-2 rounded-2xl p-6 bg-black">
+						<div class="col-span-1 flex flex-col gap-8 rounded-3xl px-8 py-6">
+							<h3 class="text-2xl font-semibold uppercase">High-Quality <br />Mastering</h3>
+							
+							<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<line x1="7" y1="1" x2="1" y2="1" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
+								<line x1="15" y1="7" x2="1" y2="7" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
+							</svg>
+							
+							<p class="text-gray-400 text-xl leading-relaxed font-light">
+								Mastering gives your music its final polish, enhancing clarity, balance, and loudness so it sounds professional on any platform.
+							</p>
+						</div>
+						<img class="col-span-1 h-108 rounded-lg bg-zinc-900" src={placeholder3.src} alt="Placeholder" />
+					</div>
+
+					<div class="sticky top-32 z-40 h-120 w-full grid md:grid-cols-2 rounded-2xl p-6 bg-black">
+						<div class="col-span-1 flex flex-col gap-8 rounded-3xl px-8 py-6">
+							<h3 class="text-2xl font-semibold uppercase">Vocalist</h3>
+							
+							<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<line x1="7" y1="1" x2="1" y2="1" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
+								<line x1="15" y1="7" x2="1" y2="7" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
+							</svg>
+							
+							<p class="text-gray-400 text-xl leading-relaxed font-light">
+								I bring your lyrics to life, delivering emotive and dynamic vocal performances that connect with your audience.
+							</p>
+
+							<p class="text-gray-400 text-xl leading-relaxed font-light">
+								I also team up with Denisse Ferrara, a talented vocalist, to offer a wider range of vocal styles and collaborations for your music projects.
+							</p>
+						</div>
+						<img class="col-span-1 h-108 rounded-lg bg-zinc-900" src={placeholder4.src} alt="Placeholder" />
+					</div>
+
+					<div class="mt-12 text-center">
+						<button class="px-5 py-4 bg-white text-black hover:bg-red-600 hover:text-white transition-all font-black text-lg rounded-2xl uppercase tracking-tighter">
+							Ready to Transform Your Music?
+						</button>
 					</div>
 				</div>
 			</section>
 
-			<!-- PROJECTS SECTION -->
-			<section id="projects" class="py-24 px-6 max-w-5xl mx-auto">
-				<div class="text-center space-y-4 mb-12">
-					<h2 class="text-4xl font-black tracking-tight">Recent Projects</h2>
-					<p class="text-gray-400">Discover how quality mixing and mastering can make a difference.</p>
+			<!-- REACH / STATS SECTION -->
+			<section id="productions" class="pt-24 pb-20 px-6 flex flex-col max-w-7xl mx-auto gap-16">
+				<div class="grid md:grid-cols-3">
+					<div class="col-span-1 flex flex-col gap-6">
+						<span class="text-9xl">12</span>
+						<span class="uppercase tracking-wider text-zinc-500">YEARS OF EXPERIENCE</span>
+					</div>
+					<div class="col-span-2 flex flex-col justify-end gap-8">
+						<p class="text-3xl font-light tracking-wider uppercase text-white md:text-right">
+							Crafting sonic landscapes. <br>Building cultural moments.
+						</p>
+						<p class="text-xl font-light tracking-wider uppercase text-white/60 md:text-right">
+							Crafting sonic landscapes. <br>Building cultural moments.
+						</p>
+					</div>
 				</div>
+
+				<hr class="border-t border-white/5">
+
+				<div class="grid md:grid-cols-3">
+					<div class="col-span-1 flex flex-col gap-6">
+						<!--
+						RATIONAL
+						Fiverr: 45
+						Spotify: 73 rock 47 acoustic 19 others
+						Total: 184
+						-->
+						<span class="text-8xl">184</span>
+						<span class="uppercase tracking-wider text-zinc-500">PROJECTS COMPLETED</span>
+					</div>
+					<div class="col-span-1 flex flex-col gap-6">
+						<span class="text-8xl">500K+</span>
+						<span class="uppercase tracking-wider text-zinc-500">STREAMS</span>
+					</div>
+					<div class="col-span-1 flex flex-col gap-6">
+						<!--
+						RATIONAL
+						Estimating a bit more than 10% of total streams as interactions (likes, comments, shares, saves)
+						-->
+						<span class="text-8xl">60K+</span>
+						<span class="uppercase tracking-wider text-zinc-500">INTERACTIONS</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- PORTFOLIO SECTION -->
+			<section class="pt-12 pb-24 flex flex-col gap-16 max-w-7xl mx-auto min-h-screen">
+				<h2 class="text-5xl font-light tracking-tight uppercase">
+					Productions
+				</h2>
+
+				<div class="h-full grid grid-cols-2 gap-4">
+					<img src={placeholder1.src} alt="Placeholder" class="col-span-1 h-full object-cover rounded-lg" />
+					<div class="col-span-1 grid grid-cols-2 gap-4">
+						<img src={placeholder2.src} alt="Placeholder" class="col-span-1 h-full object-cover rounded-lg" />
+						<img src={placeholder3.src} alt="Placeholder" class="col-span-1 h-full object-cover rounded-lg" />
+						<img src={placeholder4.src} alt="Placeholder" class="col-span-2 h-full object-cover rounded-lg" />
+					</div>
+				</div>
+
+				<!-- <div class="text-center space-y-4 mb-12">
+					<h2 class="text-4xl font-black tracking-tight">Selected Projects</h2>
+					<p class="text-gray-400">Discover how quality mixing and mastering can make a difference.</p>
+				</div> -->
 				
 				<div class="glass-card p-2 rounded-2xl overflow-hidden shadow-2xl shadow-red-900/10">
 					<iframe
@@ -100,44 +250,10 @@ import HeartIcon from '@lucide/astro/icons/heart';
 					>
 					</iframe>
 				</div>
-
-				<div class="mt-12 text-center">
-					<button class="px-10 py-5 bg-white text-black hover:bg-red-600 hover:text-white transition-all font-black text-lg rounded-2xl uppercase tracking-tighter">
-						Ready to Transform Your Music?
-					</button>
-				</div>
 			</section>
 
-			<!-- REACH / STATS SECTION -->
-			<section id="reach" class="py-24 px-6 bg-red-600/5 border-y border-red-900/20">
-				<div class="max-w-5xl mx-auto">
-					<div class="mb-12 text-center md:text-left">
-						<h2 class="text-4xl font-black tracking-tight mb-2">Global Reach</h2>
-						<p class="text-gray-400">My music has reached listeners all around the world.</p>
-					</div>
-					<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-						<div class="space-y-1">
-							<p class="text-gray-500 text-xs font-bold uppercase tracking-widest">Views</p>
-							<p class="text-4xl font-black text-glow-red">400K+</p>
-						</div>
-						<div class="space-y-1">
-							<p class="text-gray-500 text-xs font-bold uppercase tracking-widest">Likes</p>
-							<p class="text-4xl font-black text-glow-red">35K+</p>
-						</div>
-						<div class="space-y-1">
-							<p class="text-gray-500 text-xs font-bold uppercase tracking-widest">Interactions</p>
-							<p class="text-4xl font-black text-glow-red">20K+</p>
-						</div>
-						<div class="space-y-1">
-							<p class="text-gray-500 text-xs font-bold uppercase tracking-widest">Monthly Listeners</p>
-							<p class="text-4xl font-black text-glow-red">2.5K+</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- CONTACT SECTION -->
-			<section id="contact" class="py-24 px-6 max-w-5xl mx-auto">
+			<!-- CONTACT SECTION
+			<section id="contact" class="py-24 px-6 max-w-7xl mx-auto">
 				<div class="glass-card p-20 rounded-[3rem] text-center space-y-8 relative overflow-hidden">
 					<div class="absolute top-0 right-0 p-8 opacity-5">
 						<SendIcon class="w-40 h-40 text-red-600" />
@@ -166,10 +282,10 @@ import HeartIcon from '@lucide/astro/icons/heart';
 						</a>
 					</div>
 				</div>
-			</section>
+			</section> -->
 
 			<!-- SUPPORT SECTION -->
-			<section class="py-24 px-6 max-w-3xl mx-auto text-center border-t border-white/5">
+			<section class="py-24 px-6 max-w-3xl mx-auto text-center">
 				<!-- Heart Icon -->
 				<div class="flex justify-center mb-6 text-rose-500">
 					<HeartIcon class="size-16" />
