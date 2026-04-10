@@ -1,6 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
 @import "tailwindcss";
 
+
+@theme {
+  --font-gothic: "UnifrakturMaguntia", cursive;
+}
 
 :root {
 	--accent: #2337ff;
@@ -42,3 +45,64 @@ body {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #050505; }
 ::-webkit-scrollbar-thumb { background: #dc2626; border-radius: 10px; }
+
+.hero-bg {
+	background: radial-gradient(30.8% 30.8% at 50% 0%, #151515 0%, #060606 100%);
+}
+
+.hero-title {
+  background: linear-gradient(90deg, #060606 -1.92%, #080808 8.37%, #0B0B0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  pointer-events: none;
+}
+
+.stage-light {
+	/* Standardize properties so they don't block clicks/interactions */
+	position: absolute;
+	pointer-events: none;
+	/* Ensures rotation happens from the top right, making positioning responsive and predictable */
+	transform-origin: right top; 
+}
+
+.ellipse-glow {
+	width: 1400px;
+	height: 430px;
+	right: 0;
+	top: -20vh;
+	background: radial-gradient(64.78% 42.44% at 79.55% 37.8%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 80%);
+	mix-blend-mode: difference;
+	transform: rotate(-32deg);
+}
+
+.ellipse-1 {
+	width: 1300px;
+	height: 96px;
+	right: 0vw;
+	top: -10vh;
+	background: radial-gradient(89.32% 44.7% at 104.08% 43.29%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 100%);
+	mix-blend-mode: color-dodge;
+	transform: rotate(-26deg);
+}
+
+.ellipse-2 {
+	width: 1300px;
+	height: 96px;
+	right: 0;
+	top: -5vh;
+	background: radial-gradient(89.32% 44.7% at 104.08% 43.29%, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 100%);
+	mix-blend-mode: color-dodge;
+	transform: rotate(-32deg);
+}
+
+.ellipse-3 {
+	width: 1300px;
+	height: 96px;
+	right: 0vw;
+	top: 2vh;
+	background: radial-gradient(89.32% 44.7% at 104.08% 43.29%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+	mix-blend-mode: color-dodge;
+	transform: rotate(-38deg);
+}

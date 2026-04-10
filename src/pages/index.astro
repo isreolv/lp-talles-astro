@@ -38,49 +38,56 @@ import placeholder4 from '../assets/blog-placeholder-5.jpg';
 
 		<main>
 			<!-- HERO SECTION -->
-			<section id="home" class="flex flex-col justify-center items-center h-screen px-6 max-w-7xl mx-auto gap-6">
-				<p class="absolute top-32 text-red-500 font-mono tracking-widest text-sm uppercase animate-pulse">
-					WIP
-				</p>
-
-				<div class="inline-flex space-x-4 items-center justify-center text-white/80 border border-[#1C1C1C] px-3 py-2 rounded-[40px] bg-zinc-950">
-					<div class="p-2 rounded-full border border-[#1C1C1C]">
-						<AudioLinesIcon class="w-6 h-6" />
+			<section id="home" class="hero-bg">
+				<div class="absolute inset-0 overflow-hidden pointer-events-none z-20">
+					<div class="relative w-full h-full">
+						<div class="stage-light ellipse-glow"></div>
+						<div class="stage-light ellipse-1"></div>
+						<div class="stage-light ellipse-2"></div>
+						<div class="stage-light ellipse-3"></div>
 					</div>
-					<p>Music Producer, Singer and Audio Engineer</p>
 				</div>
 
-				<img src={tallesHeroSvg.src} alt="Talles Cattarin" class="w-full max-w-2xl mt-4 transition-transform duration-300 hover:rotate-1" />
-				
-				<p class="text-sm md:text-base text-gray-400 font-semibold max-w-2xl leading-relaxed tracking-wide uppercase">
-					Crafting sonic  · Building cultural
-				</p>
-				<!-- <p class="text-gray-500 max-w-xl">
-					I'm Talles Cattarin, a music producer dedicated to creating powerful, high-quality sound through modern mixing and mastering.
-				</p> -->
-				<!-- <div class="flex flex-wrap gap-4 pt-4">
-					<a href="#contact" class="px-8 py-4 bg-rose-600 hover:bg-rose-700 text-white font-bold rounded-xl transition-all flex items-center gap-2 group">
-						Start Your Project
-						<ArrowRightIcon class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-					</a>
-				</div> -->
+				<div class="relative flex flex-col justify-center items-center h-screen px-6 gap-6 max-w-7xl mx-auto">
+					<p class="hero-title z-0 absolute top-56 text-xl md:text-[9rem] font-gothic tracking-widest">
+						Talles Cattarin
+					</p>
+
+					<div class="inline-flex z-10 space-x-4 items-center justify-center text-white/80 border border-[#1C1C1C] px-3 py-2 rounded-[40px] bg-zinc-950">
+						<div class="p-2 rounded-full border border-[#1C1C1C]">
+							<AudioLinesIcon class="w-6 h-6" />
+						</div>
+						<p>Music Producer, Singer and Audio Engineer</p>
+					</div>
+
+					<img src={tallesHeroSvg.src} class="z-10 w-full max-w-2xl mt-4 transition-transform duration-300 hover:rotate-1" alt="Talles Cattarin" />
+					
+					<p class="z-10 text-base md:text-lg text-gray-400 font-light max-w-2xl leading-relaxed tracking-wide uppercase">
+						Crafting sonic  · Building cultural
+					</p>
+					<!-- <p class="text-gray-500 max-w-xl">
+						I'm Talles Cattarin, a music producer dedicated to creating powerful, high-quality sound through modern mixing and mastering.
+					</p> -->
+					<!-- <div class="flex flex-wrap gap-4 pt-4">
+						<a href="#contact" class="px-8 py-4 bg-rose-600 hover:bg-rose-700 text-white font-bold rounded-xl transition-all flex items-center gap-2 group">
+							Start Your Project
+							<ArrowRightIcon class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+						</a>
+					</div> -->
+				</div>
 			</section>
 
 			<!-- ABOUT SECTION -->
 			<section id="about" class="py-24 px-6 h-screen bg-zinc-950">
 				<div class="grid md:grid-cols-3 max-w-7xl mx-auto gap-8">
-					<img src={placeholder1.src} alt="Placeholder" class="col-span-1 h-134 rounded-lg" />
+					<img src={placeholder1.src} alt="Placeholder" class="col-span-1 h-134 rounded-xl" />
 					<div class="col-span-2 flex flex-col gap-12">
 						<h2 class="text-5xl font-light tracking-wide uppercase">
-							Hi, I'm Talles!
+							Hi, I'm Talles! A musician, singer and audio engineer from Curitiba, Brazil.
 						</h2>
-
-						<p class="text-4xl font-light tracking-wide uppercase">
-							Musician, singer and audio engineer from Curitiba, Brazil.
-						</p>
 						
-						<p class="text-2xl font-light uppercase text-white/60">
-							I create reinterpretations of songs that marked generations and my life as well.
+						<p class="text-xl font-light uppercase text-white/30">
+							I create reinterpretations of songs that marked <br>generations and my life as well.
 						</p>
 					</div>
 				</div>
@@ -88,31 +95,33 @@ import placeholder4 from '../assets/blog-placeholder-5.jpg';
 
 			<!-- SERVICES SECTION -->
 			<section id="services" class="py-24 px-6 bg-zinc-950">
-				<div class="flex flex-col max-w-7xl mx-auto gap-8">
-					<div class="text-center space-y-4 mb-4">
+				<div class="flex flex-col max-w-7xl mx-auto gap-10">
+					<div class="text-center space-y-4">
 						<h2 class="text-2xl font-black tracking-tight">
 							SERVICES
 							<AudioLinesIcon class="w-4 h-4 inline-block text-red-600 ml-2" />
 						</h2>
 					</div>
 
-					<div class="sticky top-20 z-10 h-120 w-full grid md:grid-cols-2 rounded-2xl p-6 bg-black">
-						<div class="col-span-1 flex flex-col gap-8 rounded-3xl px-8 py-6">
-							<h3 class="text-2xl font-semibold uppercase">Music <br />Production</h3>
-							
-							<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<line x1="7" y1="1" x2="1" y2="1" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
-								<line x1="15" y1="7" x2="1" y2="7" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
-							</svg>
-							
-							<p class="text-gray-400 text-xl leading-relaxed font-light">
-								I create and shape your music from concept to final product, ensuring every element is polished and impactful.
-							</p>
+					<div class="sticky top-20 z-10 pt-10">
+						<div class="h-120 w-full grid md:grid-cols-2 rounded-2xl p-6 bg-black">
+							<div class="col-span-1 flex flex-col gap-8 rounded-3xl px-8 py-6">
+								<h3 class="text-2xl font-semibold uppercase">Music <br />Production</h3>
+								
+								<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<line x1="7" y1="1" x2="1" y2="1" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
+									<line x1="15" y1="7" x2="1" y2="7" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
+								</svg>
+								
+								<p class="text-gray-400 text-xl leading-relaxed font-light">
+									I create and shape your music from concept to final product, ensuring every element is polished and impactful.
+								</p>
+							</div>
+							<img class="col-span-1 h-108 rounded-lg bg-zinc-900" src={placeholder1.src} alt="Placeholder" />
 						</div>
-						<img class="col-span-1 h-108 rounded-lg bg-zinc-900" src={placeholder1.src} alt="Placeholder" />
 					</div>
 
-					<div class="sticky top-24 z-20 h-120 w-full grid md:grid-cols-2 rounded-2xl p-6 bg-black">
+					<div class="sticky top-30 z-20 h-120 w-full grid md:grid-cols-2 rounded-2xl p-6 bg-black">
 						<div class="col-span-1 flex flex-col gap-8 rounded-3xl px-8 py-6">
 							<h3 class="text-2xl font-semibold uppercase">Professional <br />Mixing</h3>
 							
@@ -128,7 +137,7 @@ import placeholder4 from '../assets/blog-placeholder-5.jpg';
 						<img class="col-span-1 h-108 rounded-lg bg-zinc-900" src={placeholder2.src} alt="Placeholder" />
 					</div>
 
-					<div class="sticky top-28 z-30 h-120 w-full grid md:grid-cols-2 rounded-2xl p-6 bg-black">
+					<div class="sticky top-34 z-30 h-120 w-full grid md:grid-cols-2 rounded-2xl p-6 bg-black">
 						<div class="col-span-1 flex flex-col gap-8 rounded-3xl px-8 py-6">
 							<h3 class="text-2xl font-semibold uppercase">High-Quality <br />Mastering</h3>
 							
@@ -144,13 +153,13 @@ import placeholder4 from '../assets/blog-placeholder-5.jpg';
 						<img class="col-span-1 h-108 rounded-lg bg-zinc-900" src={placeholder3.src} alt="Placeholder" />
 					</div>
 
-					<div class="sticky top-32 z-40 h-120 w-full grid md:grid-cols-2 rounded-2xl p-6 bg-black">
+					<div class="sticky top-38 z-40 h-120 w-full grid md:grid-cols-2 rounded-2xl p-6 bg-black">
 						<div class="col-span-1 flex flex-col gap-8 rounded-3xl px-8 py-6">
 							<h3 class="text-2xl font-semibold uppercase">Vocalist</h3>
 							
 							<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<line x1="7" y1="1" x2="1" y2="1" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
-								<line x1="15" y1="7" x2="1" y2="7" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
+								<line x1="7" y1="1" x2="1" y2="1" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round" />
+								<line x1="15" y1="7" x2="1" y2="7" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round" />
 							</svg>
 							
 							<p class="text-gray-400 text-xl leading-relaxed font-light">
@@ -162,12 +171,6 @@ import placeholder4 from '../assets/blog-placeholder-5.jpg';
 							</p>
 						</div>
 						<img class="col-span-1 h-108 rounded-lg bg-zinc-900" src={placeholder4.src} alt="Placeholder" />
-					</div>
-
-					<div class="mt-12 text-center">
-						<button class="px-5 py-4 bg-white text-black hover:bg-red-600 hover:text-white transition-all font-black text-lg rounded-2xl uppercase tracking-tighter">
-							Ready to Transform Your Music?
-						</button>
 					</div>
 				</div>
 			</section>
@@ -218,7 +221,7 @@ import placeholder4 from '../assets/blog-placeholder-5.jpg';
 			</section>
 
 			<!-- PORTFOLIO SECTION -->
-			<section class="pt-12 pb-24 flex flex-col gap-16 max-w-7xl mx-auto min-h-screen">
+			<section class="py-24 flex flex-col gap-16 max-w-7xl mx-auto min-h-screen">
 				<h2 class="text-5xl font-light tracking-tight uppercase">
 					Productions
 				</h2>
@@ -283,6 +286,15 @@ import placeholder4 from '../assets/blog-placeholder-5.jpg';
 					</div>
 				</div>
 			</section> -->
+
+			<section class="py-24 px-6 max-w-6xl mx-auto text-center">
+				<h2 class="text-xl md:text-7xl font-bold mb-8">
+					LET'S CREATE SOUND <br>THAT RESONATES.
+				</h2>
+				<p class="text-xl text-zinc-500 leading-relaxed">
+					Open for commissions, collaborations, and <br>meaningful projects.
+				</p>
+			</section>
 
 			<!-- SUPPORT SECTION -->
 			<section class="py-24 px-6 max-w-3xl mx-auto text-center">
