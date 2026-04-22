@@ -59,6 +59,22 @@ body {
   pointer-events: none;
 }
 
+.cta-glow {
+  position: absolute;
+  width: 1072px;
+  height: 1072px;
+  left: 50%;
+  bottom: 0;
+
+  transform: translate(-50%, 50%);
+
+  width: 1052px;
+  height: 1052px;
+
+  background: radial-gradient(46.05% 46.05% at 50% 50%, rgba(236, 0, 63, 0.24) 0%, rgba(6, 6, 6, 0.24) 100%);
+  background-blend-mode: lighten;
+}
+
 .stage-light {
 	/* Standardize properties so they don't block clicks/interactions */
 	position: absolute;
