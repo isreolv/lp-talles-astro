@@ -2,7 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE, DONATION_PATREON, DONATION_PAYPAL } from '../consts';
+import { SITE_DESCRIPTION, SITE_TITLE, CONTACT_WHATSAPP } from '../consts';
 
 import SendIcon from '@lucide/astro/icons/send';
 import AudioLinesIcon from '@lucide/astro/icons/audio-lines';
@@ -310,7 +310,7 @@ import { ArrowRight } from '@lucide/astro';
 				</span>
 
 				<div class="inline-flex z-10 items-center gap-8 mt-20">
-					<a href="#" class="inline-flex items-center gap-2 bg-[#EC003F] px-4 py-3 rounded-4xl transition-all hover:cursor-pointer">
+					<a href={CONTACT_WHATSAPP} class="inline-flex items-center gap-2 bg-[#EC003F] px-4 py-3 rounded-4xl transition-all hover:cursor-pointer">
 						<span class="tracking-wide">START A PROJECT</span>
 						<ArrowRight	class="w-4 h-4" />
 					</a>
