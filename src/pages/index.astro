@@ -131,89 +131,91 @@ import { ArrowRight } from '@lucide/astro';
 			</section>
 
 			<!-- SERVICES SECTION -->
-			<section id="services" class="bg-zinc-950 px-6 py-24">
-				<div class="flex flex-col gap-10 mx-auto max-w-7xl">
-					<div class="space-y-4 text-center">
-						<h2 class="font-black text-2xl tracking-tight">
-							SERVICES
-							<AudioLinesIcon class="inline-block ml-2 w-4 h-4 text-red-600" />
+			<section id="services" class="bg-zinc-950 pt-8">
+				<div class="flex flex-col">
+					<div class="space-y-4 mb-20 text-center">
+						<h2 class="font-medium text-6xl tracking-normal">
+							Three services.
 						</h2>
+						<p class="font-medium text-6xl tracking-normal">
+							Each done properly.
+						</p>
+						<p class="mt-10 text-zinc-500 uppercase">Nothing rushed. Typical turnaround: 5–7 days.</p>
 					</div>
 
-					<div class="top-20 z-10 sticky pt-10">
-						<div class="grid md:grid-cols-2 bg-black p-6 rounded-2xl w-full h-120">
-							<div class="flex flex-col gap-8 col-span-1 px-8 py-6 rounded-3xl">
-								<h3 class="font-semibold text-2xl uppercase">Music <br />Production</h3>
+					<div class="bg-[#0B0B0B] py-10 border-white/5 border-x-8 border-y">
+						<div class="grid md:grid-cols-2 mx-auto rounded-2xl w-full max-w-7xl">
+							<div class="flex flex-col gap-8 md:order-1 col-span-1 py-6 rounded-3xl">
+								<h3 class="flex flex-col gap-2">
+									<span class="font-light text-red-500 uppercase tracking-wider">Music</span>
+									<span class="font-semibold text-2xl">Production</span>
+								</h3>
 								
-								<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<line x1="7" y1="1" x2="1" y2="1" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
-									<line x1="15" y1="7" x2="1" y2="7" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
-								</svg>
-								
-								<p class="font-light text-gray-400 text-xl leading-relaxed">
+								<p class="max-w-sm font-light text-zinc-300 text-lg leading-relaxed">
 									I create and shape your music from concept to final product, ensuring every element is polished and impactful.
 								</p>
+
+								<a href="#" class="inline-flex items-center gap-2 text-zinc-500 text-sm uppercase">
+									Learn More
+									<ArrowRight class="w-4 h-4" />
+								</a>
 							</div>
-							<img class="col-span-1 bg-zinc-900 rounded-lg h-108" src={placeholder1.src} alt="Placeholder" />
+							<img class="md:order-2 col-span-1 bg-zinc-900 rounded-lg h-92" src={placeholder1.src} alt="Placeholder" />
 						</div>
 					</div>
 
-					<div class="top-30 z-20 sticky grid md:grid-cols-2 bg-black p-6 rounded-2xl w-full h-120">
-						<div class="flex flex-col gap-8 col-span-1 px-8 py-6 rounded-3xl">
-							<h3 class="font-semibold text-2xl uppercase">Professional <br />Mixing</h3>
-							
-							<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<line x1="7" y1="1" x2="1" y2="1" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
-								<line x1="15" y1="7" x2="1" y2="7" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
-							</svg>
-							
-							<p class="font-light text-gray-400 text-xl leading-relaxed">
-								I transform your raw tracks into a cohesive and impactful sound, ensuring every instrument and vocal shines in the right place.
-							</p>
+					<div class="bg-[#0B0B0B] py-10 border-white/5 border-x-8 border-y">
+						<div class="grid md:grid-cols-2 mx-auto rounded-2xl w-full max-w-7xl">
+							<div class="flex flex-col gap-8 md:order-2 col-span-1 py-6 md:pl-8 rounded-3xl">
+								<h3 class="flex flex-col gap-2">
+									<span class="font-light text-red-500 uppercase tracking-wider">Professional</span>
+									<span class="font-semibold text-2xl">Mixing and Mastering</span>
+								</h3>
+								
+								<p class="max-w-lg font-light text-zinc-300 text-lg leading-relaxed">
+									I transform your raw tracks into a cohesive and impactful sound, balancing every element so 
+									each instrument and vocal sits perfectly in the mix—resulting in a polished,
+									professional sound that translates well across any platform.
+								</p>
+
+								<a href="#" class="inline-flex items-center gap-2 text-zinc-500 text-sm uppercase">
+									Learn More
+									<ArrowRight class="w-4 h-4" />
+								</a>
+							</div>
+							<img class="md:order-1 col-span-1 bg-zinc-900 rounded-lg h-92" src={placeholder2.src} alt="Placeholder" />
 						</div>
-						<img class="col-span-1 bg-zinc-900 rounded-lg h-108" src={placeholder2.src} alt="Placeholder" />
 					</div>
 
-					<div class="top-34 z-30 sticky grid md:grid-cols-2 bg-black p-6 rounded-2xl w-full h-120">
-						<div class="flex flex-col gap-8 col-span-1 px-8 py-6 rounded-3xl">
-							<h3 class="font-semibold text-2xl uppercase">High-Quality <br />Mastering</h3>
-							
-							<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<line x1="7" y1="1" x2="1" y2="1" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
-								<line x1="15" y1="7" x2="1" y2="7" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round"/>
-							</svg>
-							
-							<p class="font-light text-gray-400 text-xl leading-relaxed">
-								Mastering gives your music its final polish, enhancing clarity, balance, and loudness so it sounds professional on any platform.
-							</p>
-						</div>
-						<img class="col-span-1 bg-zinc-900 rounded-lg h-108" src={placeholder3.src} alt="Placeholder" />
-					</div>
+					<div class="bg-[#0B0B0B] py-10 border-white/5 border-x-8 border-y">
+						<div class="grid md:grid-cols-2 mx-auto rounded-2xl w-full max-w-7xl">
+							<div class="flex flex-col md:order-1 col-span-1 py-6 rounded-3xl">
+								<h3 class="flex flex-col gap-2">
+									<span class="font-light text-red-500 uppercase tracking-wider">Singer</span>
+									<span class="font-semibold text-2xl">Solo or duet</span>
+								</h3>
+								
+								<p class="mt-8 max-w-lg font-light text-zinc-300 text-lg leading-relaxed">
+									I bring your lyrics to life, delivering emotive and dynamic vocal performances that connect with your audience.
+								</p>
 
-					<div class="top-38 z-40 sticky grid md:grid-cols-2 bg-black p-6 rounded-2xl w-full h-120">
-						<div class="flex flex-col gap-8 col-span-1 px-8 py-6 rounded-3xl">
-							<h3 class="font-semibold text-2xl uppercase">Vocalist</h3>
-							
-							<svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<line x1="7" y1="1" x2="1" y2="1" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round" />
-								<line x1="15" y1="7" x2="1" y2="7" stroke="#EC003F" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round" />
-							</svg>
-							
-							<p class="font-light text-gray-400 text-xl leading-relaxed">
-								I bring your lyrics to life, delivering emotive and dynamic vocal performances that connect with your audience.
-							</p>
+								<p class="mt-2 max-w-lg font-light text-zinc-300 text-lg leading-relaxed">
+									I also team up with Denisse Ferrara, a talented vocalist, to offer a wider range of vocal styles and collaborations for your music projects.
+								</p>
 
-							<p class="font-light text-gray-400 text-xl leading-relaxed">
-								I also team up with Denisse Ferrara, a talented vocalist, to offer a wider range of vocal styles and collaborations for your music projects.
-							</p>
+								<a href="#" class="inline-flex items-center gap-2 mt-8 text-zinc-500 text-sm uppercase">
+									Learn More
+									<ArrowRight class="w-4 h-4" />
+								</a>
+							</div>
+							<img class="md:order-2 col-span-1 bg-zinc-900 rounded-lg h-92" src={placeholder4.src} alt="Placeholder" />
 						</div>
-						<img class="col-span-1 bg-zinc-900 rounded-lg h-108" src={placeholder4.src} alt="Placeholder" />
 					</div>
 				</div>
 			</section>
 
 			<!-- REACH / STATS SECTION -->
-			<section id="productions" class="flex flex-col gap-16 mx-auto px-6 pt-24 pb-20 max-w-7xl">
+			<section id="productions" class="flex flex-col gap-16 mx-auto px-6 pt-28 pb-20 max-w-7xl">
 				<div class="grid md:grid-cols-3">
 					<div class="flex flex-col gap-6 col-span-1">
 						<span class="text-9xl">10+</span>
@@ -291,38 +293,6 @@ import { ArrowRight } from '@lucide/astro';
 					</iframe>
 				</div> -->
 			</section>
-
-			<!-- CONTACT SECTION
-			<section id="contact" class="mx-auto px-6 py-24 max-w-7xl">
-				<div class="relative space-y-8 p-20 rounded-[3rem] overflow-hidden text-center glass-card">
-					<div class="top-0 right-0 absolute opacity-5 p-8">
-						<SendIcon class="w-40 h-40 text-red-600" />
-					</div>
-					
-					<h2 class="font-black text-4xl md:text-5xl tracking-tighter">Let's Work <span class="text-rose-600">Together</span></h2>
-					<p class="mx-auto max-w-2xl text-gray-400 leading-relaxed">
-						To request a quote or ask questions, reach out directly via Instagram, Whatsapp or e-mail.
-          				Let’s work together to make your ideas sound their best!
-					</p>
-					
-					<div class="flex flex-wrap justify-center gap-4">
-						<a href="#" class="flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 px-6 py-3 border border-white/10 rounded-xl font-semibold transition-all">
-							<InstagramIcon class="w-5 h-5 text-[#FF0069]" />
-							Instagram
-						</a>
-						<a href="#" class="flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 px-6 py-3 border border-white/10 rounded-xl font-semibold transition-all">
-							<svg class="w-5 h-5 text-green-500" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M0 48L3.374 35.674C1.292 32.066 0.198 27.976 0.2 23.782C0.206 10.67 10.876 0 23.986 0C30.348 0.002 36.32 2.48 40.812 6.976C45.302 11.472 47.774 17.448 47.772 23.804C47.766 36.918 37.096 47.588 23.986 47.588C20.006 47.586 16.084 46.588 12.61 44.692L0 48ZM13.194 40.386C16.546 42.376 19.746 43.568 23.978 43.57C34.874 43.57 43.75 34.702 43.756 23.8C43.76 12.876 34.926 4.02 23.994 4.016C13.09 4.016 4.22 12.884 4.216 23.784C4.214 28.234 5.518 31.566 7.708 35.052L5.71 42.348L13.194 40.386ZM35.968 29.458C35.82 29.21 35.424 29.062 34.828 28.764C34.234 28.466 31.312 27.028 30.766 26.83C30.222 26.632 29.826 26.532 29.428 27.128C29.032 27.722 27.892 29.062 27.546 29.458C27.2 29.854 26.852 29.904 26.258 29.606C25.664 29.308 23.748 28.682 21.478 26.656C19.712 25.08 18.518 23.134 18.172 22.538C17.826 21.944 18.136 21.622 18.432 21.326C18.7 21.06 19.026 20.632 19.324 20.284C19.626 19.94 19.724 19.692 19.924 19.294C20.122 18.898 20.024 18.55 19.874 18.252C19.724 17.956 18.536 15.03 18.042 13.84C17.558 12.682 17.068 12.838 16.704 12.82L15.564 12.8C15.168 12.8 14.524 12.948 13.98 13.544C13.436 14.14 11.9 15.576 11.9 18.502C11.9 21.428 14.03 24.254 14.326 24.65C14.624 25.046 18.516 31.05 24.478 33.624C25.896 34.236 27.004 34.602 27.866 34.876C29.29 35.328 30.586 35.264 31.61 35.112C32.752 34.942 35.126 33.674 35.622 32.286C36.118 30.896 36.118 29.706 35.968 29.458Z" fill="currentColor" />
-							</svg>
-							WhatsApp
-						</a>
-						<a href="#" class="flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 px-6 py-3 border border-white/10 rounded-xl font-semibold transition-all">
-							<MailIcon class="w-5 h-5 text-red-500" />
-							Email
-						</a>
-					</div>
-				</div>
-			</section> -->
 
 			<section class="relative flex flex-col justify-center items-center w-full h-[768px] overflow-hidden text-center">
 				<span class="cta-glow"></span>
