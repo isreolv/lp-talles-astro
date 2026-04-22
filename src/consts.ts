@@ -3,6 +3,7 @@ export const SITE_DESCRIPTION = 'I\'m Talles Cattarin, a music producer dedicate
 
 export const SOCIAL_INSTAGRAM = 'https://www.instagram.com/tallescattarin/';
 export const SOCIAL_YOUTUBE = 'https://www.youtube.com/@tallescattarin?sub_confirmation=1';
+export const SOCIAL_TIKTOK = 'https://www.tiktok.com/@talles_cattarin';
 export const SOCIAL_YOUTUBE_MUSIC = 'https://music.youtube.com/channel/UCsBFSXfuJxWPJjCHImM_Jsw';
 export const SOCIAL_SPOTIFY = 'https://open.spotify.com/artist/77SAbQybNSZmuluK93v8AO';
 export const SOCIAL_APPLE_MUSIC = 'https://music.apple.com/br/artist/talles-cattarin/1510095525';

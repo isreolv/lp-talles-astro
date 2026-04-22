@@ -1,15 +1,59 @@
 ---
+import {
+	SOCIAL_INSTAGRAM,
+	SOCIAL_YOUTUBE,
+	SOCIAL_TIKTOK,
+	SOCIAL_YOUTUBE_MUSIC,
+	SOCIAL_SPOTIFY,
+	SOCIAL_DEEZER,
+	SOCIAL_APPLE_MUSIC,
+	SOCIAL_AMAZON_MUSIC
+ } from '../consts';
+
 const today = new Date();
 ---
 
-<footer class="px-6 py-12 border-white/5 border-t text-center">
-	<p class="font-bold text-zinc-600 text-xs uppercase tracking-widest">
-		&copy; {today.getFullYear()} Talles Cattarin. All Rights Reserved. 👊🏻🤘🏻
-	</p>
-	<p class="font-light text-zinc-600 text-xs uppercase tracking-widest">
-		With support from
-		<a href="https://www.instagram.com/dz_zomer" target="_blank">dz_zomer</a>
-		 and
-		<a href="https://www.instagram.com/isreolv" target="_blank">isreolv</a>.
-	</p>
+<footer class="px-6 py-8 w-full">
+	<div class="mx-auto max-w-7xl">
+		<div class="flex justify-between">
+			<p class="font-medium text-zinc-600 text-xs uppercase tracking-widest">
+				&copy; {today.getFullYear()} TALLES CATTARIN.
+			</p>
+			<div class="flex flex-wrap justify-center gap-3 max-w-md">
+				<a href={SOCIAL_INSTAGRAM} target="_blank" class="font-light text-zinc-600 text-xs uppercase tracking-widest">
+					Instagram
+				</a>
+				<a href={SOCIAL_YOUTUBE} target="_blank" class="font-light text-zinc-600 text-xs uppercase tracking-widest">
+					YouTube
+				</a>
+				<a href={SOCIAL_TIKTOK} target="_blank" class="font-light text-zinc-600 text-xs uppercase tracking-widest">
+					TikTok
+				</a>
+				<a href={SOCIAL_YOUTUBE_MUSIC} target="_blank" class="font-light text-zinc-600 text-xs uppercase tracking-widest">
+					Youtube Music
+				</a>
+				<a href={SOCIAL_SPOTIFY} target="_blank" class="font-light text-zinc-600 text-xs uppercase tracking-widest">
+					Spotify
+				</a>
+				<a href={SOCIAL_DEEZER} target="_blank" class="font-light text-zinc-600 text-xs uppercase tracking-widest">
+					Deezer
+				</a>
+				<a href={SOCIAL_APPLE_MUSIC} target="_blank" class="font-light text-zinc-600 text-xs uppercase tracking-widest">
+					Apple Music
+				</a>
+				<a href={SOCIAL_AMAZON_MUSIC} target="_blank" class="font-light text-zinc-600 text-xs uppercase tracking-widest">
+					Amazon Music
+				</a>
+			</div>
+			<p class="font-medium text-zinc-600 text-xs uppercase tracking-widest">
+				&copy; {today.getFullYear()} TALLES CATTARIN.
+			</p>
+		</div>
+		<div class="pt-6 font-light text-zinc-800 text-xs text-center uppercase tracking-widest">
+			With support from
+			<a href="https://www.instagram.com/dz_zomer" target="_blank">dz_zomer</a>
+			and
+			<a href="https://www.instagram.com/isreolv" target="_blank">isreolv</a>.
+		</div>
+	</div>
 </footer>
