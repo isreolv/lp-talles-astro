@@ -3,33 +3,29 @@ import InstagramIcon from '@lucide/astro/icons/instagram';
 import { SITE_TITLE } from '../consts';
 import tallesLogoSm from '../assets/talles-logo-sm.svg';
 import HeaderLink from './HeaderLink.astro';
+import { HeartIcon } from '@lucide/astro';
 ---
 
 <header class="top-4 right-0 left-0 z-50 fixed px-6">
-	<nav class="relative bg-[#0D0D0D] mx-auto border border-white/10 rounded-lg max-w-7xl overflow-hidden [border-image-source:linear-gradient(0deg,#191919,#191919),linear-gradient(90.21deg,rgba(255,255,255,0)_88.75%,rgba(255,255,255,0.32)_100%)] [border-image-slice:1]">
-		<!-- Glass Layer
-		<div class="-z-10 absolute inset-0 bg-gradient-to-r from-red-950/40 via-black/90 to-red-950/40 backdrop-blur-2xl"></div> -->
-		
-		<div class="flex justify-between items-center px-6 py-4 h-16">
-			<HeaderLink href="/#home" class="font-bold text-xl uppercase tracking-tighter hover:scale-110 transition-transform duration-300">
+	<nav class="relative bg-[#0D0D0D] mx-auto border top-bar-border border-white/5 rounded-lg max-w-7xl overflow-hidden">
+		<div class="relative flex justify-center items-center px-6 py-4 h-16">
+			<HeaderLink href="/#home" class="left-6 absolute font-bold text-xl uppercase tracking-tighter hover:scale-110 transition-transform duration-300">
 				<img src={tallesLogoSm.src} alt={SITE_TITLE} class="h-8" />
 			</HeaderLink>
 			
 			<ul class="hidden md:flex gap-8">
-				<li><HeaderLink href="/#services" class="font-light text-gray-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Services</HeaderLink></li>
-				<li><HeaderLink href="/#studio" class="font-light text-gray-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Productions</HeaderLink></li>
-				<li><HeaderLink href="/#contact" class="font-light text-gray-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Contact</HeaderLink></li>
-				<li><HeaderLink href="/blog" class="font-light text-gray-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Blog</HeaderLink></li>
+				<li><HeaderLink href="/#services" class="font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Services</HeaderLink></li>
+				<li><HeaderLink href="/#studio" class="font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Work</HeaderLink></li>
+				<li><HeaderLink href="/#contact" class="font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Contact</HeaderLink></li>
+				<li><HeaderLink href="/blog" class="font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Blog</HeaderLink></li>
 			</ul>
 
-			<div class="flex items-center gap-4">
-				<!-- <a href="https://instagram.com/tallescattarin" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-					<InstagramIcon class="w-5 h-5" />
-				</a>
-				<HeaderLink href="/#contact" class="bg-red-600 hover:bg-red-700 shadow-lg shadow-red-900/20 px-4 py-1.5 rounded-lg font-bold text-white text-xs uppercase tracking-wider transition-all">
-					Hire Me
-				</HeaderLink> -->
-			</div>
+			<HeaderLink href="#" class="inline-flex right-6 absolute gap-2 hover:cursor-pointer">
+				<span class="font-medium text-zinc-400 text-xs uppercase tracking-widest">
+					Support Me
+				</span>
+				<HeartIcon class="w-4 h-4 text-rose-500" />
+			</HeaderLink>
 		</div>
 	</nav>
 </header>
