@@ -18,8 +18,8 @@ const today = new Date();
 
 <footer class="px-6 py-8 w-full">
 	<div class="mx-auto max-w-7xl">
-		<div class="flex md:flex-row flex-col justify-between items-center gap-6">
-			<p class="font-medium text-zinc-600 text-xs uppercase tracking-widest">
+		<div class="relative flex md:flex-row flex-col justify-center items-center gap-6 w-full">
+			<p class="md:left-0 md:absolute font-medium text-zinc-600 text-xs uppercase tracking-widest">
 				&copy; {today.getFullYear()} TALLES CATTARIN.
 			</p>
 			<div class="flex flex-wrap justify-center gap-3 max-w-lg">
@@ -54,18 +54,18 @@ const today = new Date();
 					Fiverr
 				</a>
 			</div>
-			<a href="#" class="inline-flex gap-2 hover:cursor-pointer">
+			<a href="/donate" class="inline-flex md:right-0 md:absolute gap-2 hover:cursor-pointer">
 				<span class="font-medium text-zinc-600 text-xs uppercase tracking-widest">
 					Support Me
 				</span>
 				<HeartIcon class="w-4 h-4 text-rose-500" />
 			</a>
 		</div>
-		<!-- <div class="pt-6 font-light text-zinc-800 text-xs text-center uppercase tracking-widest">
+		<div class="pt-6 font-light text-zinc-800 text-xs text-center uppercase tracking-widest">
 			With support from
 			<a href="https://www.instagram.com/dz_zomer" target="_blank">dz_zomer</a>
 			and
 			<a href="https://www.instagram.com/isreolv" target="_blank">isreolv</a>.
-		</div> -->
+		</div>
 	</div>
 </footer>

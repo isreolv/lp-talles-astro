@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+import { HeartIcon } from '@lucide/astro';
+import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
+import { DONATION_PATREON, DONATION_PAYPAL } from '../consts';
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title="Support my work" description="Support my work" />
+	</head>
+
+	<body>
+		<Header />
+		<main class="mx-auto pt-[8em] max-w-6xl">
+			<article>
+				<div class="w-full">
+					<Image width={1020} height={510} src={AboutHeroImage} alt="" class="block mx-auto rounded-lg" />
+				</div>
+				<div class="m-auto p-6 max-w-2xl text-zinc-500">
+					<div class="px-6 pt-6 pb-20 text-center">
+                        <div class="flex justify-center mb-6 text-rose-500">
+                            <HeartIcon class="size-16" />
+                        </div>
+
+                        <h1 class="mb-4 font-bold text-white text-3xl">Support My Work</h1>
+
+                        <p class="mb-8 text-zinc-400 leading-relaxed">
+                            If you enjoy my work and would like to support my musical journey, consider making a donation.
+                            Your contribution helps me continue producing quality content and investing in new creative projects.
+                        </p>
+                        <div class="flex justify-center gap-6">
+                            <a href={DONATION_PATREON} class="flex items-center gap-2 font-bold text-zinc-400 hover:text-white text-sm transition-colors">
+                                <svg class="size-6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <title>Patreon</title>
+                                    <path fill="white" d="M22.957 7.21c-.004-3.064-2.391-5.576-5.191-6.482-3.478-1.125-8.064-.962-11.384.604C2.357 3.231 1.093 7.391 1.046 11.54c-.039 3.411.302 12.396 5.369 12.46 3.765.047 4.326-4.804 6.068-7.141 1.24-1.662 2.836-2.132 4.801-2.618 3.376-.836 5.678-3.501 5.673-7.031Z"/>
+                                </svg>
+                                PATREON
+                            </a>
+                            <span class="text-zinc-800">|</span>
+                            <a href={DONATION_PAYPAL} class="flex items-center gap-2 font-bold text-zinc-400 hover:text-white text-sm transition-colors">
+                                <svg class="size-6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <title>PayPal</title>
+                                    <path fill="white" d="M15.607 4.653H8.941L6.645 19.251H1.82L4.862 0h7.995c3.754 0 6.375 2.294 6.473 5.513-.648-.478-2.105-.86-3.722-.86m6.57 5.546c0 3.41-3.01 6.853-6.958 6.853h-2.493L11.595 24H6.74l1.845-11.538h3.592c4.208 0 7.346-3.634 7.153-6.949a5.24 5.24 0 0 1 2.848 4.686M9.653 5.546h6.408c.907 0 1.942.222 2.363.541-.195 2.741-2.655 5.483-6.441 5.483H8.714Z"/>
+                                </svg>
+                                PAYPAL
+                            </a>
+                        </div>
+                    </div>
+				</div>
+			</article>
+		</main>
+		<Footer />
+	</body>
+</html>
