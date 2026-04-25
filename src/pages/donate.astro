@@ -4,9 +4,9 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 
-import { HeartIcon } from '@lucide/astro';
+import { GuitarIcon, HeartIcon } from '@lucide/astro';
 import heroImage from '../assets/about.png';
-import { DONATION_PATREON, DONATION_PAYPAL } from '../consts';
+import { DONATION_PATREON, DONATION_PAYPAL, DONATION_SPONSOR_COVER } from '../consts';
 ---
 
 <html lang="en">
@@ -21,7 +21,7 @@ import { DONATION_PATREON, DONATION_PAYPAL } from '../consts';
 				<div class="w-full">
 					<Image width={1020} height={510} src={heroImage} alt="" class="block mx-auto rounded-lg" />
 				</div>
-				<div class="m-auto p-6 max-w-2xl text-zinc-500">
+				<div class="m-auto p-6 max-w-3xl text-zinc-500">
 					<div class="px-6 pt-6 pb-20 text-center">
                         <div class="flex justify-center mb-6 text-rose-500">
                             <HeartIcon class="size-16" />
@@ -29,11 +29,7 @@ import { DONATION_PATREON, DONATION_PAYPAL } from '../consts';
 
                         <h1 class="mb-4 font-bold text-white text-3xl">Support My Work</h1>
 
-                        <p class="mb-8 text-zinc-400 leading-relaxed">
-                            If you enjoy my work and would like to support my musical journey, consider making a donation.
-                            Your contribution helps me continue producing quality content and investing in new creative projects.
-                        </p>
-                        <div class="flex justify-center gap-6">
+                        <div class="flex justify-center gap-6 mt-8">
                             <a href={DONATION_PATREON} class="flex items-center gap-2 font-bold text-zinc-400 hover:text-white text-sm transition-colors">
                                 <svg class="size-6" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <title>Patreon</title>
@@ -49,7 +45,24 @@ import { DONATION_PATREON, DONATION_PAYPAL } from '../consts';
                                 </svg>
                                 PAYPAL
                             </a>
+                            <span class="text-zinc-800">|</span>
+                            <a href={DONATION_SPONSOR_COVER} class="flex items-center gap-2 font-bold text-zinc-400 hover:text-white text-sm transition-colors">
+                                <GuitarIcon class="size-6 text-white" />
+                                SPONSOR COVER
+                            </a>
                         </div>
+
+                        <p class="mt-8 text-zinc-300 leading-relaxed">
+                            If you enjoy my work and want to help fuel this musical journey, your support is what allows me to keep producing high-quality music independently. 
+                        </p>
+
+                        <p class="mt-6 text-zinc-300 leading-relaxed">
+                            But I don't want this to be a one-way street—<span class="font-bold text-white">I want you to be part of the process!</span> By joining my <a href={DONATION_PATREON} class="font-bold text-white">Patreon</a>, you step directly into our community and unlock exclusive rewards like early access to new releases, high-quality MP3s, backing tracks to practice with, and <span class="italic">even getting your name featured in my videos.</span>
+                        </p>
+
+                        <p class="mt-6 text-zinc-300 leading-relaxed">
+                            If you want to take our collaboration even further and hear your absolute favorite song reimagined in my style, <span class="font-bold text-white">you can also sponsor a full custom cover.</span> Just reach out to me via the <span class="font-bold text-white">"Sponsor Cover"</span> button above or the <span class="font-bold text-white">"Contact"</span> button in the top bar, and let's bring your idea to life!
+                        </p>
                     </div>
 				</div>
 			</article>

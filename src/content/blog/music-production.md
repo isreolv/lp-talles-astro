@@ -38,4 +38,4 @@ I am constantly getting requests in the comments: *"Please cover this!"* or *"Ma
 
 Whether you need a producer to build your original song from scratch, someone to breathe new life into your existing stems, or you just really want to hear me turn a 90s dance anthem into a heavy acoustic rock banger, I'm your guy.
 
-**Let's get to work.** Just click the **Contact** button up in the top bar of the website to shoot me a message with your project ideas. I can't wait to hear what we're going to create together. 🤘
+**Let's get to work.** Just click the **Contact** button up in the top bar of the website to shoot me a message with your project ideas. I can't wait to hear what we're going to create together. 🤘🏻

@@ -5,7 +5,7 @@ pubDate: 'Apr 17 2026'
 heroImage: '../../assets/vocals.png'
 ---
 
-Hey everyone! Talles here. 🤘
+Hey everyone! Talles here. 🤘🏻
 
 If you're subscribed to my YouTube channel, you've heard me belt out everything from reimagined rock classics to stripped-down acoustic anthems. I absolutely love lending my voice to a great song—and now, I want to lend it to *yours*.
 
