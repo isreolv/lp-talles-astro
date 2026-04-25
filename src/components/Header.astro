@@ -2,29 +2,66 @@
 import { SITE_TITLE } from '../consts';
 import tallesLogoSm from '../assets/tcbrand.svg';
 import HeaderLink from './HeaderLink.astro';
-import { HeartIcon } from '@lucide/astro';
+import { HeartIcon, Menu, X } from '@lucide/astro';
 ---
 
 <header class="top-4 right-0 left-0 z-50 fixed px-6">
-	<nav class="relative bg-[#0D0D0D] mx-auto border top-bar-border border-white/5 rounded-lg max-w-7xl overflow-hidden">
-		<div class="relative flex justify-center items-center px-6 py-4 h-16">
-			<HeaderLink href="/#home" class="left-6 absolute font-bold text-xl uppercase tracking-tighter hover:scale-110 transition-transform duration-300">
-				<img src={tallesLogoSm.src} alt={SITE_TITLE} class="h-6 -rotate-2" />
-			</HeaderLink>
-			
-			<ul class="hidden md:flex gap-8">
-				<li><HeaderLink href="/#services" class="font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Services</HeaderLink></li>
-				<li><HeaderLink href="/#studio" class="font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Work</HeaderLink></li>
-				<li><HeaderLink href="/#contact" class="font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Contact</HeaderLink></li>
-				<li><HeaderLink href="/blog" class="font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Blog</HeaderLink></li>
-			</ul>
+    <nav class="relative bg-[#0D0D0D] mx-auto border top-bar-border border-white/5 rounded-lg max-w-7xl overflow-hidden transition-all duration-300">
+        <div class="relative flex justify-center items-center px-6 py-4 h-16">
+            <HeaderLink href="/#home" class="left-6 absolute font-bold text-xl uppercase tracking-tighter hover:scale-110 transition-transform duration-300">
+                <img src={tallesLogoSm.src} alt={SITE_TITLE} class="h-6 -rotate-2" />
+            </HeaderLink>
+            
+            {/* Desktop Navigation */}
+            <ul class="hidden md:flex gap-8">
+                <li><HeaderLink href="/#services" class="font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Services</HeaderLink></li>
+                <li><HeaderLink href="/#studio" class="font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Work</HeaderLink></li>
+                <li><HeaderLink href="/#contact" class="font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Contact</HeaderLink></li>
+                <li><HeaderLink href="/blog" class="font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Blog</HeaderLink></li>
+            </ul>
 
-			<HeaderLink href="/donate" class="inline-flex right-6 absolute gap-2 hover:cursor-pointer">
-				<span class="font-medium text-zinc-400 text-xs uppercase tracking-widest">
-					Support Me
-				</span>
-				<HeartIcon class="w-4 h-4 text-rose-500" />
-			</HeaderLink>
-		</div>
-	</nav>
+            {/* Right Side Icons (Donate + Mobile Menu Toggle) */}
+            <div class="right-6 absolute flex items-center gap-4">
+                <HeaderLink href="/donate" class="inline-flex items-center gap-2 hover:cursor-pointer">
+                    <span class="hidden xl:block font-medium text-zinc-400 text-xs uppercase tracking-widest">
+                        Support Me
+                    </span>
+                    <HeartIcon class="w-4 h-4 text-rose-500" />
+                </HeaderLink>
+                
+                {/* Hamburger Toggle */}
+                <button id="mobile-menu-btn" class="md:hidden flex justify-center items-center text-zinc-400 hover:text-white transition-colors" aria-label="Toggle Menu">
+                    <Menu id="icon-open" class="block w-5 h-5" />
+                    <X id="icon-close" class="hidden w-5 h-5" />
+                </button>
+            </div>
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        <div id="mobile-menu" class="hidden md:hidden border-white/5 border-t">
+            <ul class="flex flex-col gap-4 px-6 py-4">
+                <li><HeaderLink href="/#services" class="block font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Services</HeaderLink></li>
+                <li><HeaderLink href="/#studio" class="block font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Work</HeaderLink></li>
+                <li><HeaderLink href="/#contact" class="block font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Contact</HeaderLink></li>
+                <li><HeaderLink href="/blog" class="block font-light text-zinc-400 hover:text-red-500 text-sm uppercase tracking-widest transition-colors">Blog</HeaderLink></li>
+            </ul>
+        </div>
+    </nav>
 </header>
+
+<script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    if (btn && menu && iconOpen && iconClose) {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden');
+            iconOpen.classList.toggle('block');
+            iconClose.classList.toggle('hidden');
+            iconClose.classList.toggle('block');
+        });
+    }
+</script>
