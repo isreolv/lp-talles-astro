@@ -43,7 +43,7 @@ const posts = (await getCollection('blog')).sort(
 			}
 			@media (max-width: 720px) {
 				ul {
-					gap: 0.5em;
+					gap: 2em;
 				}
 				ul li {
 					width: 100%;
@@ -61,7 +61,7 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 
-		<main class="container mx-auto max-w-5xl px-6 py-32">
+		<main class="mx-auto px-6 py-32 max-w-5xl container">
 			<section>
 				<ul class="flex flex-wrap gap-8">
 					{
@@ -72,7 +72,7 @@ const posts = (await getCollection('blog')).sort(
 										<Image width={720} height={360} src={post.data.heroImage} alt="" />
 									)}
 									<h4 class="title">{post.data.title}</h4>
-									<p class="text-zinc-500">
+									<p class="mt-0.5 text-zinc-500">
 										<FormattedDate date={post.data.pubDate} />
 									</p>
 								</a>
