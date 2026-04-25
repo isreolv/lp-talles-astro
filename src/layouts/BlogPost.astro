@@ -21,11 +21,11 @@ const { title, description, pubDate, updatedDate, heroImage, hideSeparator } = A
 	<body>
 		<Header />
 		<main class="mx-auto pt-[8em] max-w-6xl">
-			<article>
+			<article class="prose-blockquote:bg-zinc-900/40 prose-code:bg-zinc-800/80 prose-pre:bg-zinc-900 prose-invert prose-blockquote:px-4 prose-code:px-1.5 prose-blockquote:py-1 prose-code:py-0.5 prose-pre:border prose-hr:border-zinc-800 prose-pre:border-zinc-800 prose-blockquote:border-l-red-500 prose-code:rounded max-w-none prose-code:font-medium prose-h1:font-black prose-a:text-white prose-blockquote:text-zinc-400 prose-code:text-white prose-headings:text-white prose-ol:marker:text-red-500 prose-strong:text-white prose-ul:marker:text-red-500 prose-h1:text-4xl prose-a:decoration-red-500 prose-a:underline prose-a:underline-offset-4 prose-blockquote:not-italic transition-colors prose">
 				<div class="w-full">
 					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" class="block mx-auto rounded-lg" />}
 				</div>
-				<div class="m-auto p-6 max-w-2xl text-zinc-500">
+				<div class="m-auto p-6 max-w-3xl">
 					<div class="text-white text-center">
 						<div class="text-zinc-600">
 							<FormattedDate date={pubDate} />

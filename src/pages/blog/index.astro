@@ -72,7 +72,7 @@ const posts = (await getCollection('blog')).sort(
 										<Image width={720} height={360} src={post.data.heroImage} alt="" />
 									)}
 									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
+									<p class="text-zinc-500">
 										<FormattedDate date={post.data.pubDate} />
 									</p>
 								</a>

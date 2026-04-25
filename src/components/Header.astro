@@ -1,7 +1,6 @@
 ---
-import InstagramIcon from '@lucide/astro/icons/instagram';
 import { SITE_TITLE } from '../consts';
-import tallesLogoSm from '../assets/talles-logo-sm.svg';
+import tallesLogoSm from '../assets/tcbrand.svg';
 import HeaderLink from './HeaderLink.astro';
 import { HeartIcon } from '@lucide/astro';
 ---
@@ -10,7 +9,7 @@ import { HeartIcon } from '@lucide/astro';
 	<nav class="relative bg-[#0D0D0D] mx-auto border top-bar-border border-white/5 rounded-lg max-w-7xl overflow-hidden">
 		<div class="relative flex justify-center items-center px-6 py-4 h-16">
 			<HeaderLink href="/#home" class="left-6 absolute font-bold text-xl uppercase tracking-tighter hover:scale-110 transition-transform duration-300">
-				<img src={tallesLogoSm.src} alt={SITE_TITLE} class="h-8" />
+				<img src={tallesLogoSm.src} alt={SITE_TITLE} class="h-6 -rotate-2" />
 			</HeaderLink>
 			
 			<ul class="hidden md:flex gap-8">

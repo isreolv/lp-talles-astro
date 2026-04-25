@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 
 @theme {
@@ -118,4 +119,14 @@ body {
 	background: radial-gradient(89.32% 44.7% at 104.08% 43.29%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
 	mix-blend-mode: color-dodge;
 	transform: rotate(-38deg);
+}
+
+.audio-container {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
