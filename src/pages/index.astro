@@ -29,59 +29,331 @@ import coverSong1 from '../assets/same-mistake.png'
 import coverSong2 from '../assets/fate-of-ophelia.png'
 import coverSong3 from '../assets/game-of-thrones.png'
 import coverSong4 from '../assets/wicked-game.png'
-import Waveform from '../components/icons/Waveform.astro';
 import { ArrowRight } from '@lucide/astro';
 
-
+// Generate Waveform Bars Array at build time
+const numBars = 30;
+const bars = Array.from({ length: numBars }).map((_, i) => {
+    const initialScale = 0.3 + Math.random() * 0.4;
+    const maxScale = 0.7 + Math.random() * 0.3;
+    return {
+        randomDelay: Math.random() * -3,
+        duration: 1.5 + Math.random() * 1.5,
+        staggerDelay: i * 0.04,
+        initialScale,
+        maxScale
+    };
+});
 ---
+
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body class="selection:bg-red-600 selection:text-white antialiased">
-		<Header />
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <style is:global>
+            @keyframes eq-pulse {
+                0%, 100% { transform: scaleY(var(--start-scale)); }
+                50% { transform: scaleY(var(--max-scale)); }
+            }
+            .animate-eq {
+                animation: eq-pulse var(--anim-duration) ease-in-out infinite;
+            }
+        </style>
+    </head>
+    <body class="bg-[#030303] selection:bg-red-600 selection:text-white antialiased">
+        
+        <div id="delayed-header" class="z-50 relative opacity-0 transition-opacity duration-700 ease-out pointer-events-none">
+            <Header />
+        </div>
 
-		<main>
-			<!-- HERO SECTION -->
-			<section id="home" class="hero-bg">
-				<div class="relative flex flex-col mx-auto px-6 xl:px-0 py-16 max-w-7xl h-screen">
-					<div class="flex flex-col justify-center items-center gap-8 h-full">
-						<p class="top-56 z-0 absolute font-gothic md:text-[9rem] text-xl tracking-widest hero-title">
-							Talles Cattarin
-						</p>
+        <main>
+            <section id="home" class="relative min-h-screen overflow-hidden hero-bg">
+                
+                <div class="z-40 absolute inset-0 overflow-hidden pointer-events-none mix-blend-color-dodge">
+                    <div 
+                        id="three-container"
+                        class="relative opacity-0 w-full h-full scale-95 origin-top-right transition-all duration-0"
+                    ></div>
+                </div>
 
-						<div class="inline-flex z-10 justify-center items-center space-x-4 bg-zinc-950 px-3 py-2 border border-[#1C1C1C] rounded-[40px] text-white/80">
-							<AudioLinesIcon class="w-5 h-5 text-red-500" />
-							<p class="hidden md:block">Music Producer, Singer and Audio Engineer</p>
-							<p class="md:hidden">Musician and Music Producer</p>
-						</div>
+                <div class="relative flex flex-col mx-auto px-6 xl:px-0 py-16 max-w-7xl h-screen">
+                    <div class="z-30 flex flex-col justify-center items-center gap-8 h-full">
+                        <p class="top-56 z-0 absolute font-gothic text-white/5 md:text-[9rem] text-xl tracking-widest hero-title">
+                            Talles Cattarin
+                        </p>
 
-						<img src={tallesHeroSvg.src} class="z-10 mt-4 w-full max-w-2xl -rotate-2 hover:-rotate-1 transition-transform duration-300" alt="Talles Cattarin" />
+                        <div id="delayed-badge" class="inline-flex z-10 justify-center items-center space-x-4 bg-zinc-950 opacity-0 px-3 py-2 border border-[#1C1C1C] rounded-[40px] text-white/80 transition-opacity duration-700 pointer-events-none">
+                            <AudioLinesIcon class="w-5 h-5 text-red-500" />
+                            <p class="hidden md:block">Music Producer, Singer and Audio Engineer</p>
+                            <p class="md:hidden">Musician and Music Producer</p>
+                        </div>
 
-						<Waveform />
-					</div>
+                        <img 
+                            id="hero-logo" 
+                            src={tallesHeroSvg.src} 
+                            class="z-10 opacity-0 mt-4 w-full max-w-2xl -rotate-2 scale-[0.98] transition-all" 
+                            alt="Talles Cattarin" 
+                        />
 
-					<div class="z-10 flex md:flex-row flex-col-reverse md:justify-between items-end gap-4 w-full">
-						<p class="z-10 max-w-2xl font-light text-gray-400 text-xs md:text-sm uppercase leading-relaxed tracking-wide">
-							Crafting sonic  · Building cultural
-						</p>
-						<div class="flex flex-col items-end gap-4">
-							<a href="#studio" class="inline-flex items-center gap-2 bg-[#EC003F] hover:brightness-110 px-4 py-2.5 rounded-4xl transition-all hover:cursor-pointer">
-								<svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M11.394 7.79602L1.8495 13.334C1.0395 13.8035 0 13.235 0 12.2885V1.21252C0 0.267522 1.038 -0.302478 1.8495 0.168522L11.394 5.70652C11.5783 5.81171 11.7314 5.96375 11.8379 6.14723C11.9445 6.33071 12.0006 6.53911 12.0006 6.75127C12.0006 6.96344 11.9445 7.17183 11.8379 7.35531C11.7314 7.53879 11.5783 7.69084 11.394 7.79602Z" fill="white"/>
-								</svg>
-								<span class="uppercase">Listen to my Latest Work</span>
-							</a>
-							<a href="#contact" class="inline-flex items-center gap-2 hover:brightness-90 px-4 py-2.5 border border-[#EC003F] rounded-4xl text-[#EC003F] hover:cursor-pointer">
-								<span class="font-normal uppercase">Book a Session</span>
-								<ArrowRight	class="w-4 h-4" />
-							</a>
-						</div>
-					</div>
-				</div>
-			</section>
+                        <div class="flex justify-center items-center gap-[4px] mt-8 md:mt-12 w-full max-w-md h-[24px]">
+                            {bars.map((bar) => (
+                                <div
+                                    class="bg-white/[0.32] opacity-0 rounded-full w-[2px] transition-all duration-500 ease-out wave-bar"
+                                    style={`
+                                        height: 100%; 
+                                        transform: scaleY(${bar.initialScale});
+                                        transition-delay: ${bar.staggerDelay}s;
+                                        animation-delay: ${bar.randomDelay}s;
+                                        --start-scale: ${bar.initialScale};
+                                        --max-scale: ${bar.maxScale};
+                                        --anim-duration: ${bar.duration}s;
+                                    `}
+                                />
+                            ))}
+                        </div>
+                    </div>
+
+                    <div class="z-30 flex md:flex-row flex-col-reverse md:justify-between items-end gap-4 w-full">
+                        <p id="delayed-text" class="z-10 opacity-0 max-w-2xl font-light text-gray-400 text-xs md:text-sm uppercase leading-relaxed tracking-wide transition-opacity duration-700 pointer-events-none">
+                            Crafting sonic  · Building cultural
+                        </p>
+                        <div id="delayed-buttons" class="flex flex-col items-end gap-4 opacity-0 transition-opacity duration-700 pointer-events-none">
+                            <a href="#studio" class="inline-flex items-center gap-2 bg-[#EC003F] hover:brightness-110 px-4 py-2.5 rounded-4xl transition-all hover:cursor-pointer">
+                                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.394 7.79602L1.8495 13.334C1.0395 13.8035 0 13.235 0 12.2885V1.21252C0 0.267522 1.038 -0.302478 1.8495 0.168522L11.394 5.70652C11.5783 5.81171 11.7314 5.96375 11.8379 6.14723C11.9445 6.33071 12.0006 6.53911 12.0006 6.75127C12.0006 6.96344 11.9445 7.17183 11.8379 7.35531C11.7314 7.53879 11.5783 7.69084 11.394 7.79602Z" fill="white"/>
+                                </svg>
+                                <span class="uppercase">Listen to my Latest Work</span>
+                            </a>
+                            <a href="#contact" class="inline-flex items-center gap-2 hover:brightness-90 px-4 py-2.5 border border-[#EC003F] rounded-4xl text-[#EC003F] hover:cursor-pointer">
+                                <span class="font-normal uppercase">Book a Session</span>
+                                <ArrowRight class="w-4 h-4" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const threeContainer = document.getElementById('three-container')!;
+                const heroLogo = document.getElementById('hero-logo')!;
+                const waveBars = document.querySelectorAll('.wave-bar')!;
+                
+                const delayedHeader = document.getElementById('delayed-header')!;
+                const delayedBadge = document.getElementById('delayed-badge')!;
+                const delayedText = document.getElementById('delayed-text')!;
+                const delayedButtons = document.getElementById('delayed-buttons')!;
+                const delayedUI = [delayedHeader, delayedBadge, delayedText, delayedButtons];
+
+                // --- PHASE TIMERS ---
+
+                // 1. FLASH (500ms)
+                setTimeout(() => {
+                    // Lights
+                    threeContainer.classList.replace('opacity-0', 'opacity-100');
+                    threeContainer.classList.replace('scale-95', 'scale-100');
+                    threeContainer.classList.replace('duration-0', 'duration-[1500ms]');
+                    threeContainer.classList.add('brightness-[1.5]', 'ease-out');
+                    
+                    // Logo SVG
+                    heroLogo.classList.replace('opacity-0', 'opacity-100');
+                    heroLogo.classList.replace('scale-[0.98]', 'scale-[1.01]');
+                    heroLogo.classList.add('duration-[1500ms]', 'ease-out');
+                }, 500);
+
+                // 2. STEADY (1000ms)
+                setTimeout(() => {
+                    threeContainer.classList.replace('brightness-[1.5]', 'brightness-100');
+                    threeContainer.classList.replace('duration-[1500ms]', 'duration-[1000ms]');
+                    threeContainer.classList.replace('ease-out', 'ease-in-out');
+
+                    heroLogo.classList.replace('scale-[1.01]', 'scale-100');
+                }, 1000);
+
+                // 3. WAVE_IN (2000ms)
+                setTimeout(() => {
+                    waveBars.forEach(bar => {
+                        bar.classList.replace('opacity-0', 'opacity-100');
+                    });
+                }, 2000);
+
+                // 4. PLAY (3250ms)
+                setTimeout(() => {
+                    // Start Waveform
+                    waveBars.forEach(bar => {
+                        bar.style.transform = ''; // Clear initial transform to let keyframes take over
+                        bar.style.transitionDelay = '0s'; // Reset stagger
+                        bar.classList.add('animate-eq');
+                    });
+
+                    // Reveal UI (Header, Badge, Bottom Text, Buttons)
+                    delayedUI.forEach(el => {
+                        if(el) {
+                            el.classList.replace('opacity-0', 'opacity-100');
+                            el.classList.remove('pointer-events-none');
+                        }
+                    });
+                }, 3250);
+
+                // --- THREE.JS INITIALIZATION ---
+                const initThree = () => {
+                    if (!window.THREE || !threeContainer) return;
+                    
+                    const THREE = window.THREE;
+                    let w = window.innerWidth;
+                    let h = window.innerHeight;
+
+                    const scene = new THREE.Scene();
+                    const camera = new THREE.OrthographicCamera(-w/2, w/2, h/2, -h/2, 0.1, 100);
+                    camera.position.z = 10;
+
+                    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+                    renderer.setSize(w, h);
+                    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); 
+                    threeContainer.appendChild(renderer.domElement);
+
+                    const baseGeo = new THREE.PlaneGeometry(1, 1);
+                    baseGeo.translate(0.5, 0, 0); 
+
+                    const createBeamMat = (intensity) => new THREE.ShaderMaterial({
+                        uniforms: {
+                            uColor: { value: new THREE.Color(0xffffff) },
+                            uIntensity: { value: intensity }
+                        },
+                        vertexShader: `
+                            varying vec2 vUv;
+                            void main() {
+                                vUv = uv;
+                                gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                            }
+                        `,
+                        fragmentShader: `
+                            varying vec2 vUv;
+                            uniform vec3 uColor;
+                            uniform float uIntensity;
+                            void main() {
+                                vec2 origin = vec2(0.0, 0.5); 
+                                float dist = length((vUv - origin) * vec2(1.0, 2.5)); 
+                                
+                                float originFade = smoothstep(0.0, 0.05, vUv.x);
+                                float alpha = pow(smoothstep(1.0, 0.0, dist), 1.5) * uIntensity * originFade;
+                                
+                                gl_FragColor = vec4(uColor * alpha, alpha);
+                            }
+                        `,
+                        transparent: true,
+                        blending: THREE.AdditiveBlending,
+                        depthWrite: false,
+                    });
+
+                    const glow = new THREE.Mesh(baseGeo, createBeamMat(0.50));  
+                    const beam1 = new THREE.Mesh(baseGeo, createBeamMat(0.40)); 
+                    const beam2 = new THREE.Mesh(baseGeo, createBeamMat(0.65)); 
+                    const beam3 = new THREE.Mesh(baseGeo, createBeamMat(0.40)); 
+
+                    scene.add(glow);
+                    scene.add(beam1);
+                    scene.add(beam2);
+                    scene.add(beam3);
+
+                    const updateLayout = () => {
+                        w = window.innerWidth;
+                        h = window.innerHeight;
+
+                        camera.left = -w/2;
+                        camera.right = w/2;
+                        camera.top = h/2;
+                        camera.bottom = -h/2;
+                        camera.updateProjectionMatrix();
+                        renderer.setSize(w, h);
+                        
+                        renderer.domElement.style.position = 'absolute';
+                        renderer.domElement.style.top = '0';
+                        renderer.domElement.style.left = '0';
+
+                        const overscan = 50; 
+                        const cornerDist = Math.hypot(w / 2, h / 2);
+                        const dirX = (w / 2) / cornerDist;
+                        const dirY = (h / 2) / cornerDist;
+
+                        const beamStart = {
+                            x: (w / 2) + (dirX * overscan),
+                            y: (h / 2) + (dirY * overscan),
+                            d: Math.min(w, h) * 0.08 
+                        };
+
+                        const destOffset = 30; 
+                        const beamEnd = {
+                            x: 0 - destOffset,
+                            y: 0 - destOffset,
+                            d: Math.min(w, h) * 0.26
+                        };
+
+                        const bleedFactor = 1.3;
+
+                        // Glow Geral (Ellipse 1)
+                        const g_dist = Math.hypot(beamEnd.x - beamStart.x, beamEnd.y - beamStart.y);
+                        glow.position.set(beamStart.x, beamStart.y, 0);
+                        glow.rotation.z = Math.atan2(beamEnd.y - beamStart.y, beamEnd.x - beamStart.x);
+                        glow.scale.set(g_dist * bleedFactor, g_dist * 0.55, 1); 
+
+                        // Beam 2
+                        const b2_ox = beamStart.x;
+                        const b2_oy = beamStart.y;
+                        const b2_tx = beamEnd.x;
+                        const b2_ty = beamEnd.y;
+                        const dist2 = Math.hypot(b2_tx - b2_ox, b2_ty - b2_oy);
+                        
+                        beam2.position.set(b2_ox, b2_oy, 0);
+                        beam2.rotation.z = Math.atan2(b2_ty - b2_oy, b2_tx - b2_ox);
+                        beam2.scale.set(dist2 * bleedFactor, dist2 * 0.22, 1); 
+
+                        // Beam 1
+                        const b1_ox = beamStart.x - beamStart.d;
+                        const b1_oy = beamStart.y;
+                        const b1_tx = beamEnd.x;
+                        const b1_ty = beamEnd.y + beamEnd.d; 
+                        const dist1 = Math.hypot(b1_tx - b1_ox, b1_ty - b1_oy);
+                        
+                        beam1.position.set(b1_ox, b1_oy, 0);
+                        beam1.rotation.z = Math.atan2(b1_ty - b1_oy, b1_tx - b1_ox);
+                        beam1.scale.set(dist1 * bleedFactor, dist1 * 0.30, 1); 
+
+                        // Beam 3
+                        const b3_ox = beamStart.x;
+                        const b3_oy = beamStart.y - beamStart.d; 
+                        const b3_tx = beamEnd.x + beamEnd.d;
+                        const b3_ty = beamEnd.y;
+                        const dist3 = Math.hypot(b3_tx - b3_ox, b3_ty - b3_oy);
+                        
+                        beam3.position.set(b3_ox, b3_oy, 0);
+                        beam3.rotation.z = Math.atan2(b3_ty - b3_oy, b3_tx - b3_ox);
+                        beam3.scale.set(dist3 * bleedFactor, dist3 * 0.30, 1); 
+                    };
+
+                    window.addEventListener('resize', updateLayout);
+                    updateLayout();
+
+                    const animate = () => {
+                        requestAnimationFrame(animate);
+                        renderer.render(scene, camera);
+                    };
+                    animate();
+                };
+
+                // Load Three.js dynamically
+                if (window.THREE) {
+                    initThree();
+                } else {
+                    const script = document.createElement('script');
+                    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+                    script.onload = initThree;
+                    document.head.appendChild(script);
+                }
+            });
+        </script>
 
 			<!-- ABOUT SECTION -->
 			<section id="about" class="flex flex-col bg-zinc-950 px-6 xl:px-0 w-full min-h-screen">
