@@ -21,9 +21,9 @@ import { HeartIcon, Menu, X } from '@lucide/astro';
             </ul>
 
             {/* Right Side Icons (Donate + Mobile Menu Toggle) */}
-            <div class="right-6 absolute flex items-center gap-4">
+            <div class="group right-6 absolute flex items-center gap-4">
                 <HeaderLink href="/donate" class="inline-flex items-center gap-2 hover:cursor-pointer">
-                    <span class="hidden xl:block font-medium text-zinc-400 text-xs uppercase tracking-widest">
+                    <span class="hidden xl:block font-medium text-zinc-400 group-hover:text-white text-xs uppercase tracking-widest transition-colors duration-300">
                         Support Me
                     </span>
                     <HeartIcon class="w-4 h-4 text-rose-500" />
