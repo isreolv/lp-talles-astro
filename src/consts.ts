@@ -15,7 +15,7 @@ export const SOCIAL_FIVERR = 'https://www.fiverr.com/tallestc2001';
 export const SPOTIFY_EMBED = 'https://open.spotify.com/embed/artist/77SAbQybNSZmuluK93v8AO?utm_source=generator&theme=0';
 
 export const CONTACT_WHATSAPP = 'https://wa.me/5541998027818';
-export const CONTACT_EMAIL = 'talles2_cattarin2@outlook.com';
+export const CONTACT_EMAIL = 'studio@tallescattarin.com';
 export const CONTACT_EMAIL_LINK = `mailto:${CONTACT_EMAIL}`;
 
 export const DONATION_PATREON = 'https://www.patreon.com/cw/tallescattarin';

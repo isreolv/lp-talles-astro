@@ -7,7 +7,7 @@ heroImage: '../../assets/mnm.png'
 
 Hey everyone! Greetings from Curitiba 🤘🏻. 
 
-If you follow my YouTube channel, you know I’m obsessed with taking classic tracks and flipping them on their heads with rock and acoustic reinterpretations. I love breaking a song down to its bones and building it back up in a completely new way. But here's a secret: a great arrangement is only half the battle. The real magic that takes a song from a "cool basement jam" to a "massive stadium anthem" happens behind the screen. (Speaking of which, hope you like that photo of me deep in the DAW from a while back xD).
+If you follow my YouTube channel, you know I’m obsessed with taking classic tracks and flipping them on their heads with rock and acoustic reinterpretations. I love breaking a song down to its bones and building it back up in a completely new way. But here's a secret: a great arrangement is only half the battle. The real magic that takes a song from a "cool basement jam" to a "massive stadium anthem" happens behind the screen. *Speaking of which, hope you like that photo of me deep in the DAW from a while back xD*.
 
 I’m talking about **Mixing** and **Mastering**. 
 
@@ -66,13 +66,14 @@ import mixed from '../../assets/blog/mnm-mixed.mp3'
 
 ### Let's Make Your Music Sound Huge
 
+import { CONTACT_EMAIL, CONTACT_EMAIL_LINK } from '../../consts';
+import WhatsappMessageButton from '../../components/contact/WhatsappMessageButton.astro';
+
 You put your heart and soul into writing and recording your music. Don't let a muddy mix hold your songs back from reaching their full potential. 
 
 Whether you're recording acoustic folk, heavy rock, pop, or indie electronic, I can help you take your raw tracks and turn them into release-ready anthems. I offer professional mixing and mastering services tailored to your specific vibe and vision. 
 
-**Ready to level up your sound?** Drop me an email at [studio@tallescattarin.com](mailto:studio@tallescattarin.com) or click the "Contact" button below to get a quote. Let's make some noise! 🎸
-
-import WhatsappMessageButton from '../../components/contact/WhatsappMessageButton.astro';
+**Ready to level up your sound?** Drop me an email at <a href={CONTACT_EMAIL_LINK}>{CONTACT_EMAIL}</a> or click the "Contact" button below to get a quote. Let's make some noise! 🎸
 
 <div class="flex justify-center my-8">
   <WhatsappMessageButton label="Let's have a chat!" message="Hi Talles, I read your blog post about mixing and mastering and I would like to hire you for a session." size="small" />
