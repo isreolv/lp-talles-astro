@@ -17,7 +17,11 @@ I'm a **Baritone** with a warm, rich lower register and plenty of drive when we 
 * **Vocal Weave (Chest Voice):** E2 - G4
 
 ### 👫 Double the Power: Duet Vocals Available!
-Sometimes a track just calls for that dynamic male/female interplay. If your song needs a duet, I've got amazing news. I partner with the incredibly talented female vocalist **Denisse Ferrara**. Together, we can deliver lush harmonies and powerhouse duet performances that will bring your arrangement completely to life. 
+Sometimes a track just calls for that dynamic male/female interplay. If your song needs a duet, I've got amazing news. I partner with the incredibly talented female vocalist **Denisse Ferrara**. Together, we can deliver lush harmonies and powerhouse duet performances that will bring your arrangement completely to life.
+
+Have a listen!
+
+<iframe src="https://www.youtube.com/embed/7-yOIvRu2h8?si=KspImJyqTopJTw82" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" style="width: 100%; aspect-ratio: 16 / 9; border: none;" allowfullscreen></iframe>
 
 ### 📋 What I Need From You
 To make sure I nail the exact vibe you're looking for, I just need a few things to get started:
