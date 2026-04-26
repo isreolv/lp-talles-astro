@@ -103,7 +103,7 @@ const bars = Array.from({ length: numBars }).map((_, i) => {
                         <img 
 							id="hero-logo" 
 							src={tallesHeroSvg.src} 
-							class="z-10 brightness-0 mt-4 w-full max-w-2xl -rotate-2 hover:rotate-0 scale-[0.98] transition-all" 
+							class="z-10 brightness-5 mt-4 w-full max-w-2xl -rotate-2 hover:rotate-0 scale-[0.98] transition-all" 
 							alt="Talles Cattarin" 
 						/>
 
@@ -184,7 +184,7 @@ const bars = Array.from({ length: numBars }).map((_, i) => {
 						threeContainer.classList.add('brightness-[1.5]', 'ease-out');
 						
 						// Logo SVG (Flash to bright)
-						heroLogo.classList.replace('brightness-0', 'brightness-[1.5]');
+						heroLogo.classList.replace('brightness-5', 'brightness-[1.5]');
 						heroLogo.classList.replace('scale-[0.98]', 'scale-[1.01]');
 						heroLogo.classList.add('duration-[1500ms]', 'ease-out');
 					}, 500);
