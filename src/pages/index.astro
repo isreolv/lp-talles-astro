@@ -101,11 +101,11 @@ const bars = Array.from({ length: numBars }).map((_, i) => {
                         </div>
 
                         <img 
-                            id="hero-logo" 
-                            src={tallesHeroSvg.src} 
-                            class="z-10 opacity-0 mt-4 w-full max-w-2xl -rotate-2 hover:rotate-0 scale-[0.98] transition-all" 
-                            alt="Talles Cattarin" 
-                        />
+							id="hero-logo" 
+							src={tallesHeroSvg.src} 
+							class="z-10 brightness-0 mt-4 w-full max-w-2xl -rotate-2 hover:rotate-0 scale-[0.98] transition-all" 
+							alt="Talles Cattarin" 
+						/>
 
                         <div class="flex justify-center items-center gap-[4px] mt-8 md:mt-12 w-full max-w-md h-[24px]">
                             {bars.map((bar) => (
@@ -146,10 +146,16 @@ const bars = Array.from({ length: numBars }).map((_, i) => {
             </section>
 
 			<script>
+				declare global {
+					interface Window {
+						THREE: any; // @todo refactor
+					}
+				}
+
 				document.addEventListener('DOMContentLoaded', () => {
 					const threeContainer = document.getElementById('three-container')!;
 					const heroLogo = document.getElementById('hero-logo')!;
-					const waveBars = document.querySelectorAll('.wave-bar')!;
+					const waveBars = document.querySelectorAll('.wave-bar')! as NodeListOf<HTMLElement>;
 					
 					const delayedHeader = document.getElementById('delayed-header')!;
 					const delayedBadge = document.getElementById('delayed-badge')!;
@@ -177,18 +183,21 @@ const bars = Array.from({ length: numBars }).map((_, i) => {
 						threeContainer.classList.replace('duration-0', 'duration-[1500ms]');
 						threeContainer.classList.add('brightness-[1.5]', 'ease-out');
 						
-						// Logo SVG
-						heroLogo.classList.replace('opacity-0', 'opacity-100');
+						// Logo SVG (Flash to bright)
+						heroLogo.classList.replace('brightness-0', 'brightness-[1.5]');
 						heroLogo.classList.replace('scale-[0.98]', 'scale-[1.01]');
 						heroLogo.classList.add('duration-[1500ms]', 'ease-out');
 					}, 500);
 
 					// 2. STEADY (1000ms)
 					setTimeout(() => {
+						// Settle Lights
 						threeContainer.classList.replace('brightness-[1.5]', 'brightness-100');
 						threeContainer.classList.replace('duration-[1500ms]', 'duration-[1000ms]');
 						threeContainer.classList.replace('ease-out', 'ease-in-out');
 
+						// Settle Logo
+						heroLogo.classList.replace('brightness-[1.5]', 'brightness-100');
 						heroLogo.classList.replace('scale-[1.01]', 'scale-100');
 					}, 1000);
 
@@ -237,7 +246,7 @@ const bars = Array.from({ length: numBars }).map((_, i) => {
 						const baseGeo = new THREE.PlaneGeometry(1, 1);
 						baseGeo.translate(0.5, 0, 0); 
 
-						const createBeamMat = (intensity) => new THREE.ShaderMaterial({
+						const createBeamMat = (intensity: number) => new THREE.ShaderMaterial({
 							uniforms: {
 								uColor: { value: new THREE.Color(0xffffff) },
 								uIntensity: { value: intensity }
