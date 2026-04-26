@@ -16,6 +16,8 @@ import {
 	SOCIAL_AMAZON_MUSIC,
 	SOCIAL_AIRBIT,
 	SOCIAL_FIVERR,
+CONTACT_EMAIL_LINK,
+CONTACT_EMAIL,
 } from '../consts';
 
 import AudioLinesIcon from '@lucide/astro/icons/audio-lines';
@@ -30,6 +32,7 @@ import coverSong2 from '../assets/fate-of-ophelia.png'
 import coverSong3 from '../assets/game-of-thrones.png'
 import coverSong4 from '../assets/wicked-game.png'
 import { ArrowRight } from '@lucide/astro';
+import WhatsappMessageButton from '../components/contact/WhatsappMessageButton.astro';
 
 // Generate Waveform Bars Array at build time
 const numBars = 30;
@@ -778,11 +781,10 @@ const bars = Array.from({ length: numBars }).map((_, i) => {
 				</span>
 
 				<div class="inline-flex z-10 flex-wrap justify-center items-center gap-8 mt-20">
-					<a href={CONTACT_WHATSAPP} class="inline-flex items-center gap-2 bg-[#EC003F] hover:brightness-110 px-4 py-3 rounded-4xl hover:scale-102 transition-all duration-200 hover:cursor-pointer">
-						<span class="tracking-wide">START A PROJECT</span>
-						<ArrowRight	class="w-4 h-4" />
+					<WhatsappMessageButton label="START A PROJECT" />
+					<a href={CONTACT_EMAIL_LINK} class="hover:brightness-110 font-medium text-zinc-500 text-sm decoration-zinc-500 underline uppercase tracking-wide hover:cursor-pointer">
+						{CONTACT_EMAIL}
 					</a>
-					<a href="mailto:studio@tallescattarin.com" class="hover:brightness-110 font-medium text-zinc-500 text-sm decoration-zinc-500 underline uppercase tracking-wide hover:cursor-pointer">studio@tallescattarin.com</a>
 				</div>
 			</section>
 		</main>

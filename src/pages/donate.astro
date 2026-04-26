@@ -6,7 +6,10 @@ import Header from '../components/Header.astro';
 
 import { GuitarIcon, HeartIcon } from '@lucide/astro';
 import heroImage from '../assets/about.png';
-import { DONATION_PATREON, DONATION_PAYPAL, DONATION_SPONSOR_COVER } from '../consts';
+import { DONATION_PATREON, DONATION_PAYPAL, CONTACT_WHATSAPP } from '../consts';
+
+
+const DONATION_SPONSOR_COVER = `${CONTACT_WHATSAPP}?text=${encodeURIComponent("Hi Talles, just saw your work in your website and I would like to sponsor a cover.")}`;
 ---
 
 <html lang="en">
@@ -55,11 +58,11 @@ import { DONATION_PATREON, DONATION_PAYPAL, DONATION_SPONSOR_COVER } from '../co
                         </p>
 
                         <p class="mt-6 text-zinc-300 leading-relaxed">
-                            But I don't want this to be a one-way street—<span class="font-bold text-white">I want you to be part of the process!</span> By joining my <a href={DONATION_PATREON} target="_blank" rel="noopener noreferrer" class="font-semibold text-red-500">Patreon</a>, you step directly into our community and unlock exclusive rewards like early access to new releases, high-quality MP3s, backing tracks to practice with, and <span class="italic">even getting your name featured in my videos.</span>
+                            But I don't want this to be a one-way street—<span class="font-bold text-white">I want you to be part of the process!</span> By joining my <a href={DONATION_PATREON} target="_blank" rel="noopener noreferrer" class="text-white decoration-red-500 underline underline-offset-4">Patreon</a>, you step directly into our community and unlock exclusive rewards like early access to new releases, high-quality MP3s, backing tracks to practice with, and <span class="italic">even getting your name featured in my videos.</span>
                         </p>
 
                         <p class="mt-6 text-zinc-300 leading-relaxed">
-                            If you want to take our collaboration even further and hear your absolute favorite song reimagined in my style, <span class="font-bold text-white">you can also sponsor a full custom cover.</span> Just reach out to me via the <a href={DONATION_SPONSOR_COVER} target="_blank" rel="noopener noreferrer" class="font-semibold text-red-500">Sponsor a Cover</a> or via the <a href="/#contact" target="_blank" rel="noopener noreferrer" class="font-semibold text-red-500">Contact</a> section, and let's bring your idea to life!
+                            If you want to take our collaboration even further and hear your absolute favorite song reimagined in my style, <span class="font-bold text-white">you can also sponsor a full custom cover.</span> Just reach out to me via the <a href={DONATION_SPONSOR_COVER} target="_blank" rel="noopener noreferrer" class="text-white decoration-red-500 underline underline-offset-4">Sponsor a Cover</a> or via the <a href="/#contact" target="_blank" rel="noopener noreferrer" class="text-white decoration-red-500 underline underline-offset-4">Contact</a> section, and let's bring your idea to life!
                         </p>
                     </div>
 				</div>

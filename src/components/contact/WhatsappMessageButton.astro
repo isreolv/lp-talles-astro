@@ -1,0 +1,28 @@
+---
+import { ArrowRight } from "@lucide/astro";
+import { CONTACT_WHATSAPP } from "../../consts";
+
+interface Props {
+  label?: string;
+  message?: string;
+  size?: "small" | "medium" | "large";
+}
+
+const { 
+  label = "Let's chat!", 
+  message = "Hi Talles, I found you on your website and I'm interested in learning more about your services.",
+  size = "medium"
+} = Astro.props;
+
+const whatsappUrl = `${CONTACT_WHATSAPP}?text=${encodeURIComponent(message)}`;
+---
+
+<a 
+  href={whatsappUrl} 
+  target="_blank"
+  rel="noopener noreferrer"
+  class={`inline-flex items-center gap-2 bg-[#EC003F] hover:brightness-110 rounded-4xl text-white hover:scale-102 transition-all duration-200 hover:cursor-pointer ${size === "small" ? "text-sm px-3 py-2" : size === "large" ? "text-lg px-6 py-4" : "px-4 py-3"}`}
+>
+    <span class="tracking-wide">{label}</span>
+    <ArrowRight class="w-4 h-4" />
+</a>

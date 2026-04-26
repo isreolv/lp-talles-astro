@@ -14,9 +14,9 @@ export const SOCIAL_FIVERR = 'https://www.fiverr.com/tallestc2001';
 
 export const SPOTIFY_EMBED = 'https://open.spotify.com/embed/artist/77SAbQybNSZmuluK93v8AO?utm_source=generator&theme=0';
 
-export const CONTACT_WHATSAPP = 'https://api.whatsapp.com/send/?phone=5541998027818&text=Hi%20Talles%2C%20I%20found%20you%20on%20your%20website%20and%20I%27m%20interested%20in%20learning%20more%20about%20your%20services.&type=phone_number&app_absent=0';
-export const CONTACT_EMAIL = 'mailto:talles2_cattarin2@outlook.com';
+export const CONTACT_WHATSAPP = 'https://wa.me/5541998027818';
+export const CONTACT_EMAIL = 'talles2_cattarin2@outlook.com';
+export const CONTACT_EMAIL_LINK = `mailto:${CONTACT_EMAIL}`;
 
 export const DONATION_PATREON = 'https://www.patreon.com/cw/tallescattarin';
 export const DONATION_PAYPAL = 'https://www.paypal.com/donate/?hosted_button_id=7N38B2WJJ9WHC';
-export const DONATION_SPONSOR_COVER = 'https://api.whatsapp.com/send/?phone=5541998027818&text=Hi%20Talles%2C%20I%20found%20you%20on%20your%20website%20and%20I%27m%20interested%20in%20sponsoring%20a%20full%20custom%20cover.&type=phone_number&app_absent=0';
