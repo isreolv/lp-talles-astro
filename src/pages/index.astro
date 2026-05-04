@@ -93,7 +93,7 @@ const bars = Array.from({ length: numBars }).map((_, i) => {
 
                 <div class="relative flex flex-col mx-auto px-6 xl:px-0 py-16 max-w-7xl h-screen">
                     <div class="z-30 flex flex-col justify-center items-center gap-8 h-full">
-                        <p class="top-56 z-0 absolute font-gothic text-white/5 lg:text-[9rem] text-xl text-xl tracking-widest hero-title">
+                        <p class="top-56 z-0 absolute font-gothic text-white/5 lg:text-[9rem] text-xl sm:text-2xl md:text-4xl tracking-widest hero-title">
                             Talles Cattarin
                         </p>
 
@@ -204,14 +204,14 @@ const bars = Array.from({ length: numBars }).map((_, i) => {
 						heroLogo.classList.replace('scale-[1.01]', 'scale-100');
 					}, 1000);
 
-					// 3. WAVE_IN (2000ms)
+					// 3. WAVE_IN (1250ms)
 					setTimeout(() => {
 						waveBars.forEach(bar => {
 							bar.classList.replace('opacity-0', 'opacity-100');
 						});
-					}, 2000);
+					}, 1250);
 
-					// 4. PLAY (3250ms)
+					// 4. PLAY (2500ms)
 					setTimeout(() => {
 						// Start Waveform
 						waveBars.forEach(bar => {
@@ -227,7 +227,9 @@ const bars = Array.from({ length: numBars }).map((_, i) => {
 								el.classList.remove('pointer-events-none');
 							}
 						});
-					}, 3250);
+
+						heroLogo.classList.replace('duration-[1500ms]', 'duration-[200ms]');
+					}, 2500);
 
 					// --- THREE.JS INITIALIZATION ---
 					const initThree = () => {
